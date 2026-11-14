@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+results_synthetic/
+data/features/
+
+# rebuilt third-party data and model weights
+external/cross-region/data/
+external/cross-region/results/landsat_dump/
+data/models/

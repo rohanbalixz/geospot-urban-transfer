@@ -1,0 +1,15 @@
+# Python 3.12 (miniforge qgis env). Versions used for the results.
+numpy==2.5.4
+scipy==1.18.1
+pot==0.9.7.post1
+rasterio==1.5.2
+pyproj==3.8.0
+torch==2.15.0
+torchvision==0.29.2
+pystac-client==0.9.1
+planetary-computer==1.0.0
+huggingface_hub==1.33.0
+matplotlib==3.11.2
+geoclip==1.3.0
+einops==0.8.2
+pytest==9.2.0

@@ -1,0 +1,29 @@
+(a) reliability, noise ceiling and symmetric ceiling of each outcome (5-seed means)
+regime                       outcome          rel(5)  ceiling  sym share sym rank ceil  joint ceiling
+R1 harmonised, CNN           relative_drop      0.48     0.70       0.29          0.34           0.24
+R1 harmonised, CNN           absolute_drop      0.43     0.65       0.22          0.33           0.22
+R1 harmonised, CNN           within_target      0.68     0.82       0.60          0.86           0.71
+R1 harmonised, CNN           pair_specific      0.72     0.85       0.65          0.82           0.70
+R2 harmonised, U-Net         relative_drop      0.84     0.92       0.29          0.43           0.40
+R2 harmonised, U-Net         absolute_drop      0.84     0.92       0.25          0.43           0.40
+R2 harmonised, U-Net         within_target      0.84     0.92       0.53          0.70           0.64
+R2 harmonised, U-Net         pair_specific      0.93     0.96       0.49          0.68           0.66
+R3 raw Landsat (1 seed)      relative_drop       n/a      n/a       0.31          0.56            n/a
+R3 raw Landsat (1 seed)      absolute_drop       n/a      n/a       0.22          0.40            n/a
+R3 raw Landsat (1 seed)      within_target       n/a      n/a       0.59          0.83            n/a
+R3 raw Landsat (1 seed)      pair_specific       n/a      n/a       0.62          0.80            n/a
+
+(b) do the two learners agree on transfer structure? (same inputs, same 8 regions)
+   relative_drop   CNN vs U-Net Spearman -0.39; corrected for seed noise -0.62  (rel CNN 0.48, U-Net 0.84)
+   absolute_drop   CNN vs U-Net Spearman -0.42; corrected for seed noise -0.71  (rel CNN 0.43, U-Net 0.84)
+   within_target   CNN vs U-Net Spearman -0.31; corrected for seed noise -0.41  (rel CNN 0.68, U-Net 0.84)
+   pair_specific   CNN vs U-Net Spearman +0.34; corrected for seed noise +0.41  (rel CNN 0.72, U-Net 0.93)
+
+(c) selection value available (cross-seed oracle) and home model, in task units
+   R1 harmonised, CNN     oracle +0.0034 | in-sample oracle +0.0123 | home model vs random foreign -0.0026 | mean score 0.342
+   R2 harmonised, U-Net   oracle +0.0197 | in-sample oracle +0.0316 | home model vs random foreign -0.0051 | mean score 0.343
+
+(d) minimum |rho| a QAP test can call significant (two-sided 5%), synthetic geometries
+   R2 U-Net relative drop, 8 regions      critical |rho| median 0.17 (10-90%: 0.16-0.19)
+   R2 U-Net within-target, 8 regions      critical |rho| median 0.29 (10-90%: 0.26-0.31)
+   synthetic within-target, 20 regions    critical |rho| median 0.15 (10-90%: 0.14-0.16)

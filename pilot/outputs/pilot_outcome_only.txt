@@ -1,0 +1,26 @@
+regions: ['south_asia', 'ssa', 'east_asia', 'andes', 'mena', 'sea', 'eeca', 'oceania']
+
+[pair-specific (double-centred)] split-half reliability (5-seed, Spearman-Brown): CNN 0.71, U-Net 0.90
+   CNN vs U-Net agreement on seed-mean structure: Spearman +0.33; disattenuated +0.41
+
+[within-target centred] split-half reliability (5-seed, Spearman-Brown): CNN 0.63, U-Net 0.81
+   CNN vs U-Net agreement on seed-mean structure: Spearman -0.31; disattenuated -0.43
+
+CNN: rank of the target's own model among 8 sources (1 = best), seed-mean: [1, 3, 2, 6, 5, 5, 5, 8]
+
+U-Net: rank of the target's own model among 8 sources (1 = best), seed-mean: [7, 3, 7, 7, 1, 5, 3, 2]
+
+RAW Landsat two 8x8 runs (landsat_history vs landsat8), finite=True
+   raw off-diagonal score agreement: Spearman +0.76
+   within-target centred agreement:  Spearman +0.67
+   pair-specific agreement:          Spearman +0.32
+   source means run1: [0.24 0.37 0.42 0.12 0.27 0.43 0.39 0.37]
+   source means run2: [0.27 0.34 0.3  0.   0.3  0.37 0.34 0.35]
+   diag run1: [0.43 0.48 0.72 0.31 0.46 0.59 0.48 0.76]
+   diag run2: [0.4  0.43 0.53 0.   0.49 0.5  0.53 0.74]
+
+RAW Landsat 20 regions x 5 seeds, in-region IoU (the Delta denominator):
+   median across-seed SD 0.077; median CV 0.16; max SD 0.200 (east_asia)
+   seeds with a collapsed in-region model (IoU < 0.1): [('south_asia_2', '20260525', np.float64(0.09)), ('andes', '1', np.float64(0.008)), ('south_asia_2', '1', np.float64(0.094)), ('brazil_north', '1', np.float64(0.064)), ('south_asia', '3', np.float64(0.088)), ('andes', '4', np.float64(0.06))]
+   seed-to-seed Spearman of in-region IoU across regions: mean +0.63 [+0.49, +0.84]
+   aggregate: {'in_region': 0.464, 'out_region': 0.255, 'home_field_gap': 0.209, 'retention': 0.55, 'source_inv': 0.403}

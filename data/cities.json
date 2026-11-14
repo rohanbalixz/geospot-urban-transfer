@@ -1,0 +1,2205 @@
+{
+ "source": "scripts/acquire/regions.py @ 649e9ad (parsed as text)",
+ "cities": [
+  {
+   "name": "mumbai",
+   "region": "south_asia",
+   "bbox": [
+    72.4,
+    18.575,
+    73.4,
+    19.575
+   ]
+  },
+  {
+   "name": "delhi",
+   "region": "south_asia",
+   "bbox": [
+    76.625,
+    28.15,
+    77.625,
+    29.15
+   ]
+  },
+  {
+   "name": "dhaka",
+   "region": "south_asia",
+   "bbox": [
+    89.925,
+    23.3,
+    90.925,
+    24.3
+   ]
+  },
+  {
+   "name": "kolkata",
+   "region": "south_asia",
+   "bbox": [
+    87.86,
+    22.07,
+    88.86,
+    23.07
+   ]
+  },
+  {
+   "name": "bengaluru",
+   "region": "south_asia",
+   "bbox": [
+    77.09,
+    12.47,
+    78.09,
+    13.47
+   ]
+  },
+  {
+   "name": "chennai",
+   "region": "south_asia",
+   "bbox": [
+    79.77,
+    12.58,
+    80.77,
+    13.58
+   ]
+  },
+  {
+   "name": "hyderabad",
+   "region": "south_asia",
+   "bbox": [
+    77.97,
+    16.88,
+    78.97,
+    17.88
+   ]
+  },
+  {
+   "name": "karachi",
+   "region": "south_asia",
+   "bbox": [
+    66.51,
+    24.36,
+    67.51,
+    25.36
+   ]
+  },
+  {
+   "name": "lahore",
+   "region": "south_asia",
+   "bbox": [
+    73.84,
+    31.05,
+    74.84,
+    32.05
+   ]
+  },
+  {
+   "name": "ahmedabad",
+   "region": "south_asia",
+   "bbox": [
+    72.07,
+    22.52,
+    73.07,
+    23.52
+   ]
+  },
+  {
+   "name": "pune",
+   "region": "south_asia",
+   "bbox": [
+    73.36,
+    18.02,
+    74.36,
+    19.02
+   ]
+  },
+  {
+   "name": "lagos",
+   "region": "ssa",
+   "bbox": [
+    2.95,
+    6.025,
+    3.95,
+    7.025
+   ]
+  },
+  {
+   "name": "nairobi",
+   "region": "ssa",
+   "bbox": [
+    36.35,
+    -1.775,
+    37.35,
+    -0.775
+   ]
+  },
+  {
+   "name": "kinshasa",
+   "region": "ssa",
+   "bbox": [
+    14.825,
+    -4.875,
+    15.825,
+    -3.875
+   ]
+  },
+  {
+   "name": "accra",
+   "region": "ssa",
+   "bbox": [
+    -0.69,
+    5.1,
+    0.31,
+    6.1
+   ]
+  },
+  {
+   "name": "abidjan",
+   "region": "ssa",
+   "bbox": [
+    -4.52,
+    4.85,
+    -3.52,
+    5.85
+   ]
+  },
+  {
+   "name": "dar_es_salaam",
+   "region": "ssa",
+   "bbox": [
+    38.78,
+    -7.32,
+    39.78,
+    -6.32
+   ]
+  },
+  {
+   "name": "addis_ababa",
+   "region": "ssa",
+   "bbox": [
+    38.24,
+    8.53,
+    39.24,
+    9.53
+   ]
+  },
+  {
+   "name": "kampala",
+   "region": "ssa",
+   "bbox": [
+    32.08,
+    -0.15,
+    33.08,
+    0.85
+   ]
+  },
+  {
+   "name": "luanda",
+   "region": "ssa",
+   "bbox": [
+    12.73,
+    -9.34,
+    13.73,
+    -8.34
+   ]
+  },
+  {
+   "name": "johannesburg",
+   "region": "ssa",
+   "bbox": [
+    27.55,
+    -26.7,
+    28.55,
+    -25.7
+   ]
+  },
+  {
+   "name": "dakar",
+   "region": "ssa",
+   "bbox": [
+    -17.95,
+    14.22,
+    -16.95,
+    15.22
+   ]
+  },
+  {
+   "name": "pearl_river_delta",
+   "region": "east_asia",
+   "bbox": [
+    113.25,
+    22.3,
+    114.25,
+    23.3
+   ]
+  },
+  {
+   "name": "shanghai",
+   "region": "east_asia",
+   "bbox": [
+    121.025,
+    30.725,
+    122.025,
+    31.725
+   ]
+  },
+  {
+   "name": "beijing",
+   "region": "east_asia",
+   "bbox": [
+    115.91,
+    39.4,
+    116.91,
+    40.4
+   ]
+  },
+  {
+   "name": "tokyo",
+   "region": "east_asia",
+   "bbox": [
+    139.19,
+    35.19,
+    140.19,
+    36.19
+   ]
+  },
+  {
+   "name": "seoul",
+   "region": "east_asia",
+   "bbox": [
+    126.48,
+    37.07,
+    127.48,
+    38.07
+   ]
+  },
+  {
+   "name": "osaka",
+   "region": "east_asia",
+   "bbox": [
+    135.0,
+    34.19,
+    136.0,
+    35.19
+   ]
+  },
+  {
+   "name": "chengdu",
+   "region": "east_asia",
+   "bbox": [
+    103.57,
+    30.07,
+    104.57,
+    31.07
+   ]
+  },
+  {
+   "name": "wuhan",
+   "region": "east_asia",
+   "bbox": [
+    113.8,
+    30.09,
+    114.8,
+    31.09
+   ]
+  },
+  {
+   "name": "chongqing",
+   "region": "east_asia",
+   "bbox": [
+    106.05,
+    29.06,
+    107.05,
+    30.06
+   ]
+  },
+  {
+   "name": "taipei",
+   "region": "east_asia",
+   "bbox": [
+    121.06,
+    24.53,
+    122.06,
+    25.53
+   ]
+  },
+  {
+   "name": "busan",
+   "region": "east_asia",
+   "bbox": [
+    128.58,
+    34.68,
+    129.58,
+    35.68
+   ]
+  },
+  {
+   "name": "bogota",
+   "region": "andes",
+   "bbox": [
+    -74.575,
+    4.175,
+    -73.575,
+    5.175
+   ]
+  },
+  {
+   "name": "lima",
+   "region": "andes",
+   "bbox": [
+    -77.525,
+    -12.55,
+    -76.525,
+    -11.55
+   ]
+  },
+  {
+   "name": "quito",
+   "region": "andes",
+   "bbox": [
+    -79.0,
+    -0.675,
+    -78.0,
+    0.325
+   ]
+  },
+  {
+   "name": "la_paz",
+   "region": "andes",
+   "bbox": [
+    -68.65,
+    -17.0,
+    -67.65,
+    -16.0
+   ]
+  },
+  {
+   "name": "medellin",
+   "region": "andes",
+   "bbox": [
+    -76.06,
+    5.75,
+    -75.06,
+    6.75
+   ]
+  },
+  {
+   "name": "arequipa",
+   "region": "andes",
+   "bbox": [
+    -72.04,
+    -16.91,
+    -71.04,
+    -15.91
+   ]
+  },
+  {
+   "name": "santiago",
+   "region": "andes",
+   "bbox": [
+    -71.15,
+    -33.95,
+    -70.15,
+    -32.95
+   ]
+  },
+  {
+   "name": "cusco",
+   "region": "andes",
+   "bbox": [
+    -72.47,
+    -14.03,
+    -71.47,
+    -13.03
+   ]
+  },
+  {
+   "name": "cochabamba",
+   "region": "andes",
+   "bbox": [
+    -66.66,
+    -17.89,
+    -65.66,
+    -16.89
+   ]
+  },
+  {
+   "name": "cali",
+   "region": "andes",
+   "bbox": [
+    -77.02,
+    2.92,
+    -76.02,
+    3.92
+   ]
+  },
+  {
+   "name": "caracas",
+   "region": "andes",
+   "bbox": [
+    -67.4,
+    9.99,
+    -66.4,
+    10.99
+   ]
+  },
+  {
+   "name": "cairo",
+   "region": "mena",
+   "bbox": [
+    30.735,
+    29.545,
+    31.735,
+    30.545
+   ]
+  },
+  {
+   "name": "istanbul",
+   "region": "mena",
+   "bbox": [
+    28.48,
+    40.51,
+    29.48,
+    41.51
+   ]
+  },
+  {
+   "name": "tehran",
+   "region": "mena",
+   "bbox": [
+    50.89,
+    35.19,
+    51.89,
+    36.19
+   ]
+  },
+  {
+   "name": "casablanca",
+   "region": "mena",
+   "bbox": [
+    -8.09,
+    33.07,
+    -7.09,
+    34.07
+   ]
+  },
+  {
+   "name": "riyadh",
+   "region": "mena",
+   "bbox": [
+    46.22,
+    24.21,
+    47.22,
+    25.21
+   ]
+  },
+  {
+   "name": "baghdad",
+   "region": "mena",
+   "bbox": [
+    43.86,
+    32.81,
+    44.86,
+    33.81
+   ]
+  },
+  {
+   "name": "amman",
+   "region": "mena",
+   "bbox": [
+    35.41,
+    31.45,
+    36.41,
+    32.45
+   ]
+  },
+  {
+   "name": "tunis",
+   "region": "mena",
+   "bbox": [
+    9.68,
+    36.31,
+    10.68,
+    37.31
+   ]
+  },
+  {
+   "name": "algiers",
+   "region": "mena",
+   "bbox": [
+    2.56,
+    36.25,
+    3.56,
+    37.25
+   ]
+  },
+  {
+   "name": "dubai",
+   "region": "mena",
+   "bbox": [
+    54.77,
+    24.7,
+    55.77,
+    25.7
+   ]
+  },
+  {
+   "name": "beirut",
+   "region": "mena",
+   "bbox": [
+    35.0,
+    33.39,
+    36.0,
+    34.39
+   ]
+  },
+  {
+   "name": "jakarta",
+   "region": "sea",
+   "bbox": [
+    106.35,
+    -6.71,
+    107.35,
+    -5.71
+   ]
+  },
+  {
+   "name": "manila",
+   "region": "sea",
+   "bbox": [
+    120.48,
+    14.1,
+    121.48,
+    15.1
+   ]
+  },
+  {
+   "name": "bangkok",
+   "region": "sea",
+   "bbox": [
+    100.0,
+    13.26,
+    101.0,
+    14.26
+   ]
+  },
+  {
+   "name": "ho_chi_minh",
+   "region": "sea",
+   "bbox": [
+    106.16,
+    10.32,
+    107.16,
+    11.32
+   ]
+  },
+  {
+   "name": "kuala_lumpur",
+   "region": "sea",
+   "bbox": [
+    101.19,
+    2.64,
+    102.19,
+    3.64
+   ]
+  },
+  {
+   "name": "surabaya",
+   "region": "sea",
+   "bbox": [
+    112.25,
+    -7.76,
+    113.25,
+    -6.76
+   ]
+  },
+  {
+   "name": "hanoi",
+   "region": "sea",
+   "bbox": [
+    105.33,
+    20.53,
+    106.33,
+    21.53
+   ]
+  },
+  {
+   "name": "yangon",
+   "region": "sea",
+   "bbox": [
+    95.7,
+    16.37,
+    96.7,
+    17.37
+   ]
+  },
+  {
+   "name": "phnom_penh",
+   "region": "sea",
+   "bbox": [
+    104.42,
+    11.06,
+    105.42,
+    12.06
+   ]
+  },
+  {
+   "name": "singapore",
+   "region": "sea",
+   "bbox": [
+    103.32,
+    0.85,
+    104.32,
+    1.85
+   ]
+  },
+  {
+   "name": "bandung",
+   "region": "sea",
+   "bbox": [
+    107.11,
+    -7.41,
+    108.11,
+    -6.41
+   ]
+  },
+  {
+   "name": "moscow",
+   "region": "eeca",
+   "bbox": [
+    37.12,
+    55.25,
+    38.12,
+    56.25
+   ]
+  },
+  {
+   "name": "kyiv",
+   "region": "eeca",
+   "bbox": [
+    30.02,
+    49.95,
+    31.02,
+    50.95
+   ]
+  },
+  {
+   "name": "warsaw",
+   "region": "eeca",
+   "bbox": [
+    20.51,
+    51.73,
+    21.51,
+    52.73
+   ]
+  },
+  {
+   "name": "bucharest",
+   "region": "eeca",
+   "bbox": [
+    25.6,
+    43.93,
+    26.6,
+    44.93
+   ]
+  },
+  {
+   "name": "tashkent",
+   "region": "eeca",
+   "bbox": [
+    68.74,
+    40.8,
+    69.74,
+    41.8
+   ]
+  },
+  {
+   "name": "almaty",
+   "region": "eeca",
+   "bbox": [
+    76.45,
+    42.76,
+    77.45,
+    43.76
+   ]
+  },
+  {
+   "name": "baku",
+   "region": "eeca",
+   "bbox": [
+    49.37,
+    39.91,
+    50.37,
+    40.91
+   ]
+  },
+  {
+   "name": "minsk",
+   "region": "eeca",
+   "bbox": [
+    27.06,
+    53.4,
+    28.06,
+    54.4
+   ]
+  },
+  {
+   "name": "kharkiv",
+   "region": "eeca",
+   "bbox": [
+    35.73,
+    49.49,
+    36.73,
+    50.49
+   ]
+  },
+  {
+   "name": "novosibirsk",
+   "region": "eeca",
+   "bbox": [
+    82.42,
+    54.53,
+    83.42,
+    55.53
+   ]
+  },
+  {
+   "name": "yekaterinburg",
+   "region": "eeca",
+   "bbox": [
+    60.11,
+    56.34,
+    61.11,
+    57.34
+   ]
+  },
+  {
+   "name": "sydney",
+   "region": "oceania",
+   "bbox": [
+    150.71,
+    -34.37,
+    151.71,
+    -33.37
+   ]
+  },
+  {
+   "name": "melbourne",
+   "region": "oceania",
+   "bbox": [
+    144.46,
+    -38.31,
+    145.46,
+    -37.31
+   ]
+  },
+  {
+   "name": "brisbane",
+   "region": "oceania",
+   "bbox": [
+    152.53,
+    -27.97,
+    153.53,
+    -26.97
+   ]
+  },
+  {
+   "name": "perth",
+   "region": "oceania",
+   "bbox": [
+    115.36,
+    -32.45,
+    116.36,
+    -31.45
+   ]
+  },
+  {
+   "name": "auckland",
+   "region": "oceania",
+   "bbox": [
+    174.26,
+    -37.35,
+    175.26,
+    -36.35
+   ]
+  },
+  {
+   "name": "adelaide",
+   "region": "oceania",
+   "bbox": [
+    138.1,
+    -35.43,
+    139.1,
+    -34.43
+   ]
+  },
+  {
+   "name": "gold_coast",
+   "region": "oceania",
+   "bbox": [
+    152.93,
+    -28.52,
+    153.93,
+    -27.52
+   ]
+  },
+  {
+   "name": "canberra",
+   "region": "oceania",
+   "bbox": [
+    148.63,
+    -35.78,
+    149.63,
+    -34.78
+   ]
+  },
+  {
+   "name": "wellington",
+   "region": "oceania",
+   "bbox": [
+    174.28,
+    -41.79,
+    175.28,
+    -40.79
+   ]
+  },
+  {
+   "name": "newcastle_au",
+   "region": "oceania",
+   "bbox": [
+    151.28,
+    -33.43,
+    152.28,
+    -32.43
+   ]
+  },
+  {
+   "name": "christchurch",
+   "region": "oceania",
+   "bbox": [
+    172.14,
+    -44.03,
+    173.14,
+    -43.03
+   ]
+  },
+  {
+   "name": "london",
+   "region": "weur",
+   "bbox": [
+    -0.63,
+    51.01,
+    0.37,
+    52.01
+   ]
+  },
+  {
+   "name": "paris",
+   "region": "weur",
+   "bbox": [
+    1.85,
+    48.36,
+    2.85,
+    49.36
+   ]
+  },
+  {
+   "name": "berlin",
+   "region": "weur",
+   "bbox": [
+    12.9,
+    52.02,
+    13.9,
+    53.02
+   ]
+  },
+  {
+   "name": "madrid",
+   "region": "weur",
+   "bbox": [
+    -4.2,
+    39.92,
+    -3.2,
+    40.92
+   ]
+  },
+  {
+   "name": "rome",
+   "region": "weur",
+   "bbox": [
+    12.0,
+    41.4,
+    13.0,
+    42.4
+   ]
+  },
+  {
+   "name": "amsterdam",
+   "region": "weur",
+   "bbox": [
+    4.4,
+    51.87,
+    5.4,
+    52.87
+   ]
+  },
+  {
+   "name": "vienna",
+   "region": "weur",
+   "bbox": [
+    15.87,
+    47.71,
+    16.87,
+    48.71
+   ]
+  },
+  {
+   "name": "barcelona",
+   "region": "weur",
+   "bbox": [
+    1.67,
+    40.89,
+    2.67,
+    41.89
+   ]
+  },
+  {
+   "name": "milan",
+   "region": "weur",
+   "bbox": [
+    8.69,
+    44.96,
+    9.69,
+    45.96
+   ]
+  },
+  {
+   "name": "munich",
+   "region": "weur",
+   "bbox": [
+    11.08,
+    47.64,
+    12.08,
+    48.64
+   ]
+  },
+  {
+   "name": "lisbon",
+   "region": "weur",
+   "bbox": [
+    -9.64,
+    38.22,
+    -8.64,
+    39.22
+   ]
+  },
+  {
+   "name": "sao_paulo",
+   "region": "latam",
+   "bbox": [
+    -47.13,
+    -24.05,
+    -46.13,
+    -23.05
+   ]
+  },
+  {
+   "name": "rio_de_janeiro",
+   "region": "latam",
+   "bbox": [
+    -43.7,
+    -23.41,
+    -42.7,
+    -22.41
+   ]
+  },
+  {
+   "name": "buenos_aires",
+   "region": "latam",
+   "bbox": [
+    -58.88,
+    -35.1,
+    -57.88,
+    -34.1
+   ]
+  },
+  {
+   "name": "brasilia",
+   "region": "latam",
+   "bbox": [
+    -48.43,
+    -16.28,
+    -47.43,
+    -15.28
+   ]
+  },
+  {
+   "name": "montevideo",
+   "region": "latam",
+   "bbox": [
+    -56.66,
+    -35.4,
+    -55.66,
+    -34.4
+   ]
+  },
+  {
+   "name": "asuncion",
+   "region": "latam",
+   "bbox": [
+    -58.08,
+    -25.78,
+    -57.08,
+    -24.78
+   ]
+  },
+  {
+   "name": "belo_horizonte",
+   "region": "latam",
+   "bbox": [
+    -44.43,
+    -20.42,
+    -43.43,
+    -19.42
+   ]
+  },
+  {
+   "name": "curitiba",
+   "region": "latam",
+   "bbox": [
+    -49.77,
+    -25.93,
+    -48.77,
+    -24.93
+   ]
+  },
+  {
+   "name": "porto_alegre",
+   "region": "latam",
+   "bbox": [
+    -51.73,
+    -30.53,
+    -50.73,
+    -29.53
+   ]
+  },
+  {
+   "name": "salvador_br",
+   "region": "latam",
+   "bbox": [
+    -39.0,
+    -13.47,
+    -38.0,
+    -12.47
+   ]
+  },
+  {
+   "name": "recife",
+   "region": "latam",
+   "bbox": [
+    -35.38,
+    -8.55,
+    -34.38,
+    -7.55
+   ]
+  },
+  {
+   "name": "mexico_city",
+   "region": "camcar",
+   "bbox": [
+    -99.63,
+    18.93,
+    -98.63,
+    19.93
+   ]
+  },
+  {
+   "name": "guatemala_city",
+   "region": "camcar",
+   "bbox": [
+    -91.01,
+    14.13,
+    -90.01,
+    15.13
+   ]
+  },
+  {
+   "name": "havana",
+   "region": "camcar",
+   "bbox": [
+    -82.88,
+    22.61,
+    -81.88,
+    23.61
+   ]
+  },
+  {
+   "name": "san_salvador",
+   "region": "camcar",
+   "bbox": [
+    -89.69,
+    13.19,
+    -88.69,
+    14.19
+   ]
+  },
+  {
+   "name": "panama_city",
+   "region": "camcar",
+   "bbox": [
+    -80.02,
+    8.48,
+    -79.02,
+    9.48
+   ]
+  },
+  {
+   "name": "tegucigalpa",
+   "region": "camcar",
+   "bbox": [
+    -87.7,
+    13.57,
+    -86.7,
+    14.57
+   ]
+  },
+  {
+   "name": "managua",
+   "region": "camcar",
+   "bbox": [
+    -86.75,
+    11.63,
+    -85.75,
+    12.63
+   ]
+  },
+  {
+   "name": "santo_domingo",
+   "region": "camcar",
+   "bbox": [
+    -70.43,
+    17.99,
+    -69.43,
+    18.99
+   ]
+  },
+  {
+   "name": "san_jose_cr",
+   "region": "camcar",
+   "bbox": [
+    -84.59,
+    9.43,
+    -83.59,
+    10.43
+   ]
+  },
+  {
+   "name": "kingston",
+   "region": "camcar",
+   "bbox": [
+    -77.29,
+    17.47,
+    -76.29,
+    18.47
+   ]
+  },
+  {
+   "name": "port_au_prince",
+   "region": "camcar",
+   "bbox": [
+    -72.83,
+    18.09,
+    -71.83,
+    19.09
+   ]
+  },
+  {
+   "name": "toronto",
+   "region": "canada",
+   "bbox": [
+    -79.88,
+    43.15,
+    -78.88,
+    44.15
+   ]
+  },
+  {
+   "name": "montreal",
+   "region": "canada",
+   "bbox": [
+    -74.07,
+    45.0,
+    -73.07,
+    46.0
+   ]
+  },
+  {
+   "name": "vancouver",
+   "region": "canada",
+   "bbox": [
+    -123.62,
+    48.78,
+    -122.62,
+    49.78
+   ]
+  },
+  {
+   "name": "calgary",
+   "region": "canada",
+   "bbox": [
+    -114.57,
+    50.55,
+    -113.57,
+    51.55
+   ]
+  },
+  {
+   "name": "ottawa",
+   "region": "canada",
+   "bbox": [
+    -76.2,
+    44.92,
+    -75.2,
+    45.92
+   ]
+  },
+  {
+   "name": "edmonton",
+   "region": "canada",
+   "bbox": [
+    -113.99,
+    53.05,
+    -112.99,
+    54.05
+   ]
+  },
+  {
+   "name": "winnipeg",
+   "region": "canada",
+   "bbox": [
+    -97.64,
+    49.4,
+    -96.64,
+    50.4
+   ]
+  },
+  {
+   "name": "quebec_city",
+   "region": "canada",
+   "bbox": [
+    -71.71,
+    46.31,
+    -70.71,
+    47.31
+   ]
+  },
+  {
+   "name": "hamilton_ca",
+   "region": "canada",
+   "bbox": [
+    -80.37,
+    42.76,
+    -79.37,
+    43.76
+   ]
+  },
+  {
+   "name": "halifax",
+   "region": "canada",
+   "bbox": [
+    -64.07,
+    44.15,
+    -63.07,
+    45.15
+   ]
+  },
+  {
+   "name": "victoria",
+   "region": "canada",
+   "bbox": [
+    -123.87,
+    47.93,
+    -122.87,
+    48.93
+   ]
+  },
+  {
+   "name": "stockholm",
+   "region": "nordic",
+   "bbox": [
+    17.57,
+    58.83,
+    18.57,
+    59.83
+   ]
+  },
+  {
+   "name": "oslo",
+   "region": "nordic",
+   "bbox": [
+    10.25,
+    59.41,
+    11.25,
+    60.41
+   ]
+  },
+  {
+   "name": "helsinki",
+   "region": "nordic",
+   "bbox": [
+    24.44,
+    59.67,
+    25.44,
+    60.67
+   ]
+  },
+  {
+   "name": "copenhagen",
+   "region": "nordic",
+   "bbox": [
+    12.07,
+    55.18,
+    13.07,
+    56.18
+   ]
+  },
+  {
+   "name": "gothenburg",
+   "region": "nordic",
+   "bbox": [
+    11.47,
+    57.21,
+    12.47,
+    58.21
+   ]
+  },
+  {
+   "name": "aarhus",
+   "region": "nordic",
+   "bbox": [
+    9.71,
+    55.66,
+    10.71,
+    56.66
+   ]
+  },
+  {
+   "name": "bergen",
+   "region": "nordic",
+   "bbox": [
+    4.82,
+    59.89,
+    5.82,
+    60.89
+   ]
+  },
+  {
+   "name": "stavanger",
+   "region": "nordic",
+   "bbox": [
+    5.23,
+    58.47,
+    6.23,
+    59.47
+   ]
+  },
+  {
+   "name": "tampere",
+   "region": "nordic",
+   "bbox": [
+    23.26,
+    61.0,
+    24.26,
+    62.0
+   ]
+  },
+  {
+   "name": "trondheim",
+   "region": "nordic",
+   "bbox": [
+    9.89,
+    62.93,
+    10.89,
+    63.93
+   ]
+  },
+  {
+   "name": "reykjavik",
+   "region": "nordic",
+   "bbox": [
+    -22.44,
+    63.65,
+    -21.44,
+    64.65
+   ]
+  },
+  {
+   "name": "prague",
+   "region": "central_europe",
+   "bbox": [
+    13.94,
+    49.58,
+    14.94,
+    50.58
+   ]
+  },
+  {
+   "name": "budapest",
+   "region": "central_europe",
+   "bbox": [
+    18.54,
+    47.0,
+    19.54,
+    48.0
+   ]
+  },
+  {
+   "name": "krakow",
+   "region": "central_europe",
+   "bbox": [
+    19.44,
+    49.56,
+    20.44,
+    50.56
+   ]
+  },
+  {
+   "name": "hamburg",
+   "region": "central_europe",
+   "bbox": [
+    9.49,
+    53.05,
+    10.49,
+    54.05
+   ]
+  },
+  {
+   "name": "frankfurt",
+   "region": "central_europe",
+   "bbox": [
+    8.18,
+    49.61,
+    9.18,
+    50.61
+   ]
+  },
+  {
+   "name": "zurich",
+   "region": "central_europe",
+   "bbox": [
+    8.04,
+    46.87,
+    9.04,
+    47.87
+   ]
+  },
+  {
+   "name": "brussels",
+   "region": "central_europe",
+   "bbox": [
+    3.85,
+    50.35,
+    4.85,
+    51.35
+   ]
+  },
+  {
+   "name": "cologne",
+   "region": "central_europe",
+   "bbox": [
+    6.46,
+    50.44,
+    7.46,
+    51.44
+   ]
+  },
+  {
+   "name": "stuttgart",
+   "region": "central_europe",
+   "bbox": [
+    8.68,
+    48.28,
+    9.68,
+    49.28
+   ]
+  },
+  {
+   "name": "wroclaw",
+   "region": "central_europe",
+   "bbox": [
+    16.54,
+    50.61,
+    17.54,
+    51.61
+   ]
+  },
+  {
+   "name": "bratislava",
+   "region": "central_europe",
+   "bbox": [
+    16.61,
+    47.65,
+    17.61,
+    48.65
+   ]
+  },
+  {
+   "name": "xian",
+   "region": "china_interior",
+   "bbox": [
+    108.45,
+    33.77,
+    109.45,
+    34.77
+   ]
+  },
+  {
+   "name": "zhengzhou",
+   "region": "china_interior",
+   "bbox": [
+    113.12,
+    34.25,
+    114.12,
+    35.25
+   ]
+  },
+  {
+   "name": "hangzhou",
+   "region": "china_interior",
+   "bbox": [
+    119.65,
+    29.77,
+    120.65,
+    30.77
+   ]
+  },
+  {
+   "name": "nanjing",
+   "region": "china_interior",
+   "bbox": [
+    118.3,
+    31.56,
+    119.3,
+    32.56
+   ]
+  },
+  {
+   "name": "tianjin",
+   "region": "china_interior",
+   "bbox": [
+    116.7,
+    38.63,
+    117.7,
+    39.63
+   ]
+  },
+  {
+   "name": "shenyang",
+   "region": "china_interior",
+   "bbox": [
+    122.93,
+    41.3,
+    123.93,
+    42.3
+   ]
+  },
+  {
+   "name": "qingdao",
+   "region": "china_interior",
+   "bbox": [
+    119.88,
+    35.57,
+    120.88,
+    36.57
+   ]
+  },
+  {
+   "name": "changsha",
+   "region": "china_interior",
+   "bbox": [
+    112.44,
+    27.73,
+    113.44,
+    28.73
+   ]
+  },
+  {
+   "name": "jinan",
+   "region": "china_interior",
+   "bbox": [
+    116.62,
+    36.15,
+    117.62,
+    37.15
+   ]
+  },
+  {
+   "name": "harbin",
+   "region": "china_interior",
+   "bbox": [
+    126.03,
+    45.3,
+    127.03,
+    46.3
+   ]
+  },
+  {
+   "name": "kunming",
+   "region": "china_interior",
+   "bbox": [
+    102.22,
+    24.54,
+    103.22,
+    25.54
+   ]
+  },
+  {
+   "name": "surat",
+   "region": "south_asia_2",
+   "bbox": [
+    72.33,
+    20.67,
+    73.33,
+    21.67
+   ]
+  },
+  {
+   "name": "jaipur",
+   "region": "south_asia_2",
+   "bbox": [
+    75.29,
+    26.41,
+    76.29,
+    27.41
+   ]
+  },
+  {
+   "name": "kanpur",
+   "region": "south_asia_2",
+   "bbox": [
+    79.83,
+    25.95,
+    80.83,
+    26.95
+   ]
+  },
+  {
+   "name": "lucknow",
+   "region": "south_asia_2",
+   "bbox": [
+    80.45,
+    26.35,
+    81.45,
+    27.35
+   ]
+  },
+  {
+   "name": "nagpur",
+   "region": "south_asia_2",
+   "bbox": [
+    78.59,
+    20.65,
+    79.59,
+    21.65
+   ]
+  },
+  {
+   "name": "patna",
+   "region": "south_asia_2",
+   "bbox": [
+    84.64,
+    25.09,
+    85.64,
+    26.09
+   ]
+  },
+  {
+   "name": "indore",
+   "region": "south_asia_2",
+   "bbox": [
+    75.36,
+    22.22,
+    76.36,
+    23.22
+   ]
+  },
+  {
+   "name": "faisalabad",
+   "region": "south_asia_2",
+   "bbox": [
+    72.58,
+    30.92,
+    73.58,
+    31.92
+   ]
+  },
+  {
+   "name": "chittagong",
+   "region": "south_asia_2",
+   "bbox": [
+    91.28,
+    21.86,
+    92.28,
+    22.86
+   ]
+  },
+  {
+   "name": "colombo",
+   "region": "south_asia_2",
+   "bbox": [
+    79.36,
+    6.43,
+    80.36,
+    7.43
+   ]
+  },
+  {
+   "name": "kathmandu",
+   "region": "south_asia_2",
+   "bbox": [
+    84.82,
+    27.22,
+    85.82,
+    28.22
+   ]
+  },
+  {
+   "name": "cape_town",
+   "region": "southern_africa",
+   "bbox": [
+    17.92,
+    -34.42,
+    18.92,
+    -33.42
+   ]
+  },
+  {
+   "name": "durban",
+   "region": "southern_africa",
+   "bbox": [
+    30.52,
+    -30.36,
+    31.52,
+    -29.36
+   ]
+  },
+  {
+   "name": "pretoria",
+   "region": "southern_africa",
+   "bbox": [
+    27.69,
+    -26.25,
+    28.69,
+    -25.25
+   ]
+  },
+  {
+   "name": "harare",
+   "region": "southern_africa",
+   "bbox": [
+    30.55,
+    -18.33,
+    31.55,
+    -17.33
+   ]
+  },
+  {
+   "name": "lusaka",
+   "region": "southern_africa",
+   "bbox": [
+    27.78,
+    -15.92,
+    28.78,
+    -14.92
+   ]
+  },
+  {
+   "name": "maputo",
+   "region": "southern_africa",
+   "bbox": [
+    32.07,
+    -26.47,
+    33.07,
+    -25.47
+   ]
+  },
+  {
+   "name": "gaborone",
+   "region": "southern_africa",
+   "bbox": [
+    25.41,
+    -25.15,
+    26.41,
+    -24.15
+   ]
+  },
+  {
+   "name": "windhoek",
+   "region": "southern_africa",
+   "bbox": [
+    16.58,
+    -23.06,
+    17.58,
+    -22.06
+   ]
+  },
+  {
+   "name": "bulawayo",
+   "region": "southern_africa",
+   "bbox": [
+    28.08,
+    -20.65,
+    29.08,
+    -19.65
+   ]
+  },
+  {
+   "name": "lubumbashi",
+   "region": "southern_africa",
+   "bbox": [
+    26.98,
+    -12.16,
+    27.98,
+    -11.16
+   ]
+  },
+  {
+   "name": "antananarivo",
+   "region": "southern_africa",
+   "bbox": [
+    47.01,
+    -19.38,
+    48.01,
+    -18.38
+   ]
+  },
+  {
+   "name": "athens",
+   "region": "mediterranean",
+   "bbox": [
+    23.23,
+    37.48,
+    24.23,
+    38.48
+   ]
+  },
+  {
+   "name": "tel_aviv",
+   "region": "mediterranean",
+   "bbox": [
+    34.28,
+    31.58,
+    35.28,
+    32.58
+   ]
+  },
+  {
+   "name": "izmir",
+   "region": "mediterranean",
+   "bbox": [
+    26.64,
+    37.92,
+    27.64,
+    38.92
+   ]
+  },
+  {
+   "name": "ankara",
+   "region": "mediterranean",
+   "bbox": [
+    32.37,
+    39.43,
+    33.37,
+    40.43
+   ]
+  },
+  {
+   "name": "alexandria",
+   "region": "mediterranean",
+   "bbox": [
+    29.42,
+    30.7,
+    30.42,
+    31.7
+   ]
+  },
+  {
+   "name": "rabat",
+   "region": "mediterranean",
+   "bbox": [
+    -7.34,
+    33.52,
+    -6.34,
+    34.52
+   ]
+  },
+  {
+   "name": "tripoli_ly",
+   "region": "mediterranean",
+   "bbox": [
+    12.69,
+    32.39,
+    13.69,
+    33.39
+   ]
+  },
+  {
+   "name": "valencia_es",
+   "region": "mediterranean",
+   "bbox": [
+    -0.88,
+    38.97,
+    0.12,
+    39.97
+   ]
+  },
+  {
+   "name": "jeddah",
+   "region": "mediterranean",
+   "bbox": [
+    38.69,
+    20.99,
+    39.69,
+    21.99
+   ]
+  },
+  {
+   "name": "aleppo",
+   "region": "mediterranean",
+   "bbox": [
+    36.66,
+    35.7,
+    37.66,
+    36.7
+   ]
+  },
+  {
+   "name": "thessaloniki",
+   "region": "mediterranean",
+   "bbox": [
+    22.44,
+    40.14,
+    23.44,
+    41.14
+   ]
+  },
+  {
+   "name": "fortaleza",
+   "region": "brazil_north",
+   "bbox": [
+    -39.02,
+    -4.23,
+    -38.02,
+    -3.23
+   ]
+  },
+  {
+   "name": "manaus",
+   "region": "brazil_north",
+   "bbox": [
+    -60.52,
+    -3.62,
+    -59.52,
+    -2.62
+   ]
+  },
+  {
+   "name": "belem",
+   "region": "brazil_north",
+   "bbox": [
+    -48.99,
+    -1.96,
+    -47.99,
+    -0.96
+   ]
+  },
+  {
+   "name": "goiania",
+   "region": "brazil_north",
+   "bbox": [
+    -49.75,
+    -17.19,
+    -48.75,
+    -16.19
+   ]
+  },
+  {
+   "name": "campinas",
+   "region": "brazil_north",
+   "bbox": [
+    -47.56,
+    -23.41,
+    -46.56,
+    -22.41
+   ]
+  },
+  {
+   "name": "sao_luis",
+   "region": "brazil_north",
+   "bbox": [
+    -44.8,
+    -3.03,
+    -43.8,
+    -2.03
+   ]
+  },
+  {
+   "name": "natal",
+   "region": "brazil_north",
+   "bbox": [
+    -35.71,
+    -6.29,
+    -34.71,
+    -5.29
+   ]
+  },
+  {
+   "name": "teresina",
+   "region": "brazil_north",
+   "bbox": [
+    -43.3,
+    -5.59,
+    -42.3,
+    -4.59
+   ]
+  },
+  {
+   "name": "cuiaba",
+   "region": "brazil_north",
+   "bbox": [
+    -56.6,
+    -16.1,
+    -55.6,
+    -15.1
+   ]
+  },
+  {
+   "name": "maceio",
+   "region": "brazil_north",
+   "bbox": [
+    -36.24,
+    -10.17,
+    -35.24,
+    -9.17
+   ]
+  },
+  {
+   "name": "joao_pessoa",
+   "region": "brazil_north",
+   "bbox": [
+    -35.36,
+    -7.62,
+    -34.36,
+    -6.62
+   ]
+  },
+  {
+   "name": "nagoya",
+   "region": "japan_korea_2",
+   "bbox": [
+    136.41,
+    34.68,
+    137.41,
+    35.68
+   ]
+  },
+  {
+   "name": "fukuoka",
+   "region": "japan_korea_2",
+   "bbox": [
+    129.9,
+    33.09,
+    130.9,
+    34.09
+   ]
+  },
+  {
+   "name": "sapporo",
+   "region": "japan_korea_2",
+   "bbox": [
+    140.85,
+    42.57,
+    141.85,
+    43.57
+   ]
+  },
+  {
+   "name": "sendai",
+   "region": "japan_korea_2",
+   "bbox": [
+    140.37,
+    37.77,
+    141.37,
+    38.77
+   ]
+  },
+  {
+   "name": "hiroshima",
+   "region": "japan_korea_2",
+   "bbox": [
+    131.96,
+    33.89,
+    132.96,
+    34.89
+   ]
+  },
+  {
+   "name": "daegu",
+   "region": "japan_korea_2",
+   "bbox": [
+    128.1,
+    35.37,
+    129.1,
+    36.37
+   ]
+  },
+  {
+   "name": "gwangju",
+   "region": "japan_korea_2",
+   "bbox": [
+    126.35,
+    34.66,
+    127.35,
+    35.66
+   ]
+  },
+  {
+   "name": "daejeon",
+   "region": "japan_korea_2",
+   "bbox": [
+    126.88,
+    35.85,
+    127.88,
+    36.85
+   ]
+  },
+  {
+   "name": "kaohsiung",
+   "region": "japan_korea_2",
+   "bbox": [
+    119.8,
+    22.13,
+    120.8,
+    23.13
+   ]
+  },
+  {
+   "name": "niigata",
+   "region": "japan_korea_2",
+   "bbox": [
+    138.54,
+    37.42,
+    139.54,
+    38.42
+   ]
+  },
+  {
+   "name": "kanazawa",
+   "region": "japan_korea_2",
+   "bbox": [
+    136.13,
+    36.09,
+    137.13,
+    37.09
+   ]
+  }
+ ]
+}
