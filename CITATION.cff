@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite it as below."
+title: "geospot-urban-transfer: what can a region distance predict about cross-region transfer?"
+type: software
+authors:
+  - family-names: Bali
+    given-names: Rohan
+license: MIT
+repository-code: "https://github.com/rohanbalixz/geospot-urban-transfer"
+date-released: "2026-11-14"
+keywords: [optimal transport, transferability, distribution shift, geospatial machine learning, pre-registration]
+references:
+  - type: article
+    title: "OT on the Map: Quantifying Domain Shifts in Geographic Space"
+    authors:
+      - family-names: Zhang
+        given-names: Haoran
+      - family-names: Betti
+        given-names: Livia
+      - family-names: Klemmer
+        given-names: Konstantin
+      - family-names: Rolf
+        given-names: Esther
+      - family-names: Alvarez-Melis
+        given-names: David
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2604.16220"
+  - type: software
+    title: "Cross-Region Source-Invariance in Earth Observation"
+    authors:
+      - family-names: Bali
+        given-names: Rohan
+    repository-code: "https://github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation"
+    commit: 649e9ad

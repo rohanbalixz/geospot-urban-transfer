@@ -64,10 +64,42 @@ H5 coverage asymmetry vs antisymmetric relative drop: rho +0.37, QAP p 0.3244 (2
 
 Distance stability over 5 tile resamples: 0.99
 
+## R3: raw Landsat input, SegUNet, IoU (city-disjoint test) (20 regions, 5 seeds)
+
+Variance: target 30.7%, pair 22.8%, residual 19.8%, source 15.7%, source_x_seed 11.1%, target_x_seed 0.0%, seed 0.0%
+
+Primary distance: GeoSpOT debiased Sinkhorn, 0.5 feature + 0.5 GeoCLIP, global scale, eps 0.01.
+
+| outcome | reliability | joint ceiling | evaluable | GeoSpOT rho | QAP p | 95% CI | share of ceiling |
+|---|---|---|---|---|---|---|---|
+| within_target | 0.86 | 0.72 | True | -0.27 | 0.0006 | [-0.44, -0.08] | 0.38 |
+| relative_drop | 0.85 | 0.56 | True | -0.26 | 0.0001 | [-0.43, -0.09] | 0.46 |
+| pair_specific | 0.84 | 0.72 | True | -0.28 | 0.0001 | [-0.45, -0.12] | 0.39 |
+
+Source selection: oracle gain +0.1439; GeoSpOT-nearest gain +0.0716 (95% CI +0.0335 to +0.1224); captured 0.50 (CI 0.25 to 0.80); home model +0.1124
+
+| secondary distance | within-target rho | QAP p | relative-drop rho | selection gain |
+|---|---|---|---|---|
+| location_only_geoclip | -0.26 | 0.0004 | -0.25 | +0.0571 |
+| feature_only | -0.24 | 0.0023 | -0.22 | +0.0436 |
+| combined_satclip_l40 | -0.34 | 0.0001 | -0.28 | +0.0798 |
+| location_only_satclip_l40 | -0.29 | 0.0001 | -0.24 | +0.1000 |
+| location_only_satclip_l10 | -0.27 | 0.0001 | -0.26 | +0.0992 |
+| location_only_geodesic | -0.01 | 0.8885 | +0.03 | +0.0716 |
+| released_code_style | -0.21 | 0.0054 | -0.23 | +0.0683 |
+| eps_0.005 | -0.27 | 0.0005 | -0.26 | +0.0716 |
+| eps_0.05 | -0.19 | 0.0255 | -0.23 | +0.0834 |
+
+H3 |rho| feature-only minus location-only (within-target): -0.01 (95% CI -0.20 to +0.19, p 0.867)
+
+H5 coverage asymmetry vs antisymmetric relative drop: rho +0.20, QAP p 0.3284 (190 pairs)
+
+Distance stability over 5 tile resamples: 1.00
+
 ## Cross-regime
 
 - H2 R2: QAP p 0.9118, Holm 0.9118, reject at 0.05: False
-- H2 family incomplete (R3 not yet run): Holm not applied.
+- H2 R3: QAP p 0.0006, Holm 0.0012, reject at 0.05: True
 - H1 CNN vs U-Net agreement, within_target: -0.31, noise-corrected -0.41
 - H1 CNN vs U-Net agreement, relative_drop: -0.39, noise-corrected -0.62
 - H1 CNN vs U-Net agreement, pair_specific: +0.34, noise-corrected +0.41

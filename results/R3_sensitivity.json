@@ -1,0 +1,48 @@
+{
+ "without_collapsed": {
+  "dropped": [
+   "southern_africa"
+  ],
+  "n_regions": 19,
+  "within_target_spearman": -0.29451766669381185,
+  "qap_p": 0.0005,
+  "boot_ci95": [
+   -0.4710891292790189,
+   -0.12363679243878489
+  ],
+  "selection": {
+   "oracle_gain": 0.14398297498064674,
+   "home_gain": 0.11754774671814301,
+   "insample_oracle_gain": 0.17913110274216545,
+   "n_splits": 10,
+   "distance_gain": 0.06665825234485885,
+   "captured_fraction": 0.4629592655230149
+  },
+  "with_all": {
+   "spearman": -0.26942819575710075,
+   "qap_p": 0.0006
+  }
+ },
+ "scoring_matrix_test": {
+  "in_region": 0.3844559245391329,
+  "out_region": 0.2720713758306367,
+  "home_field_gap": 0.11238454870849623,
+  "retention": 0.7076789781735907
+ },
+ "scoring_matrix_all_tiles": {
+  "in_region": 0.4612289486418553,
+  "out_region": 0.27399789743148917,
+  "home_field_gap": 0.18723105121036615,
+  "retention": 0.5940604947679656
+ },
+ "training": {
+  "models": 100,
+  "retrained": 13,
+  "still_collapsed": [
+   [
+    "southern_africa",
+    "1"
+   ]
+  ]
+ }
+}

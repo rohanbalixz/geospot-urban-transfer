@@ -78,7 +78,8 @@ def main():
             w = t["within_target"]; col = SERIES[0] if name == "primary" else INK2
             ax.plot(w["boot_ci95"], [yi, yi], color=col, lw=2, solid_capstyle="round")
             ax.plot(w["spearman"], yi, "o", ms=8, color=col, mec=SURFACE, mew=2)
-            ax.text(0.98, yi - 0.32, f"ρ {w['spearman']:+.2f}, p {w['qap_p']:.2f}", ha="right", va="center",
+            pv = w["qap_p"]; ptxt = "p < 0.001" if pv < 0.001 else (f"p {pv:.3f}" if pv < 0.01 else f"p {pv:.2f}")
+            ax.text(0.98, yi - 0.32, f"ρ {w['spearman']:+.2f}, {ptxt}", ha="right", va="center",
                     fontsize=7, color=INK2, transform=ax.get_yaxis_transform())
         ax.set_yticks(range(len(ROWS)), [lab for _, lab in ROWS] if j == 0 else [""] * len(ROWS))
         ax.set_ylim(len(ROWS) - 0.4, -0.7); ax.set_xlim(-1, 1)

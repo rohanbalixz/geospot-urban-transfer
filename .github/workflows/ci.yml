@@ -1,0 +1,15 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # verify.py checks that the pre-registration predates the results
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install numpy scipy pot pytest
+      - run: python -m pytest -q tests/
+      - run: python -W ignore verify.py

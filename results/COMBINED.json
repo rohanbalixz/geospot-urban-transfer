@@ -1,16 +1,22 @@
 {
  "regimes_available": [
   "R1",
-  "R2"
+  "R2",
+  "R3"
  ],
  "H2_holm": {
   "R2": {
    "p": 0.9118055555555555,
    "p_holm": 0.9118055555555555,
    "reject_at_0_05": false
+  },
+  "R3": {
+   "p": 0.0006,
+   "p_holm": 0.0012,
+   "reject_at_0_05": true
   }
  },
- "H2_family_complete": false,
+ "H2_family_complete": true,
  "H1_learner_agreement_R1_R2": {
   "within_target": {
    "spearman": -0.3074504442925496,

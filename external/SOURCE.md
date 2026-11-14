@@ -1,6 +1,10 @@
-# external/cross-region
+# external/
 
-Working copy of github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation
-at commit 649e9ad (code and receipts only; its data/ is rebuilt here, see
-PREREGISTRATION.md). Added: scripts/eval/landsat_matrix_dump.py (= ../rerun/).
-Its data/ and results/landsat_dump/ are large and gitignored.
+`make external` clones the training code this study builds on into `external/cross-region/`
+(not tracked here):
+
+- github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation, pinned to
+  commit `649e9ad` (Apache-2.0)
+- plus `rerun/landsat_matrix_dump.py`, copied to `scripts/eval/` (regime R3)
+
+Its `data/` is rebuilt locally (`make processed`, `make landsat`). See `PREREGISTRATION.md`.

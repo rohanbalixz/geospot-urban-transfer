@@ -1,0 +1,19 @@
+[project]
+name = "geotransfer"
+version = "1.0.0"
+description = "Ceilings and tests for region distances (GeoSpOT) as predictors of cross-region transfer"
+authors = [{ name = "Rohan Bali" }]
+license = "MIT"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["geotransfer*", "vendor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

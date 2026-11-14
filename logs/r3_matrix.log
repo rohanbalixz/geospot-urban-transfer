@@ -1,0 +1,125 @@
+  south_asia: 11 cities, test cities [np.str_('pune'), np.str_('ahmedabad'), np.str_('delhi')], tiles train 166 / test 75
+  ssa: 11 cities, test cities [np.str_('kinshasa'), np.str_('johannesburg'), np.str_('dakar')], tiles train 140 / test 44
+  east_asia: 11 cities, test cities [np.str_('busan'), np.str_('chongqing'), np.str_('seoul')], tiles train 181 / test 60
+  andes: 11 cities, test cities [np.str_('lima'), np.str_('santiago'), np.str_('bogota')], tiles train 70 / test 50
+  mena: 11 cities, test cities [np.str_('beirut'), np.str_('dubai'), np.str_('casablanca')], tiles train 135 / test 39
+  sea: 11 cities, test cities [np.str_('jakarta'), np.str_('yangon'), np.str_('phnom_penh')], tiles train 182 / test 55
+  eeca: 11 cities, test cities [np.str_('novosibirsk'), np.str_('bucharest'), np.str_('kharkiv')], tiles train 108 / test 37
+  oceania: 11 cities, test cities [np.str_('christchurch'), np.str_('gold_coast'), np.str_('melbourne')], tiles train 118 / test 43
+  weur: 11 cities, test cities [np.str_('madrid'), np.str_('paris'), np.str_('amsterdam')], tiles train 139 / test 53
+  latam: 11 cities, test cities [np.str_('asuncion'), np.str_('rio_de_janeiro'), np.str_('curitiba')], tiles train 141 / test 49
+  camcar: 11 cities, test cities [np.str_('managua'), np.str_('san_jose_cr'), np.str_('san_salvador')], tiles train 108 / test 45
+  canada: 11 cities, test cities [np.str_('toronto'), np.str_('ottawa'), np.str_('quebec_city')], tiles train 79 / test 36
+  nordic: 11 cities, test cities [np.str_('tampere'), np.str_('bergen'), np.str_('stockholm')], tiles train 55 / test 16
+  central_europe: 11 cities, test cities [np.str_('wroclaw'), np.str_('krakow'), np.str_('prague')], tiles train 128 / test 47
+  china_interior: 11 cities, test cities [np.str_('qingdao'), np.str_('changsha'), np.str_('tianjin')], tiles train 171 / test 68
+  south_asia_2: 11 cities, test cities [np.str_('patna'), np.str_('faisalabad'), np.str_('chittagong')], tiles train 128 / test 65
+  southern_africa: 11 cities, test cities [np.str_('pretoria'), np.str_('antananarivo'), np.str_('durban')], tiles train 77 / test 54
+  mediterranean: 11 cities, test cities [np.str_('valencia_es'), np.str_('jeddah'), np.str_('ankara')], tiles train 116 / test 43
+  brazil_north: 11 cities, test cities [np.str_('teresina'), np.str_('manaus'), np.str_('goiania')], tiles train 76 / test 29
+  japan_korea_2: 11 cities, test cities [np.str_('kanazawa'), np.str_('nagoya'), np.str_('hiroshima')], tiles train 137 / test 55
+[seed 20260525] south_asia: [{'seed': 20260525, 'in_region_test_iou': 0.16784613530313205}]
+[seed 20260525] ssa: [{'seed': 20260525, 'in_region_test_iou': 0.43898739585558644}]
+[seed 20260525] east_asia: [{'seed': 20260525, 'in_region_test_iou': 0.5476647180611375}]
+[seed 20260525] andes: [{'seed': 20260525, 'in_region_test_iou': 0.270906949352179}]
+[seed 20260525] mena: [{'seed': 20260525, 'in_region_test_iou': 0.5283383787420114}]
+[seed 20260525] sea: [{'seed': 20260525, 'in_region_test_iou': 0.5549703872437357}]
+[seed 20260525] eeca: [{'seed': 20260525, 'in_region_test_iou': 0.15120544217687074}]
+[seed 20260525] oceania: [{'seed': 20260525, 'in_region_test_iou': 0.4150014093491774}]
+[seed 20260525] weur: [{'seed': 20260525, 'in_region_test_iou': 0.45953780432967173}]
+[seed 20260525] latam: [{'seed': 20260525, 'in_region_test_iou': 0.4094120875351581}]
+[seed 20260525] camcar: [{'seed': 20260525, 'in_region_test_iou': 0.025801584307808375}, {'seed': 20261525, 'in_region_test_iou': 0.2569661749366711}]
+[seed 20260525] canada: [{'seed': 20260525, 'in_region_test_iou': 0.5215876538749387}]
+[seed 20260525] nordic: [{'seed': 20260525, 'in_region_test_iou': 0.37980643473711745}]
+[seed 20260525] central_europe: [{'seed': 20260525, 'in_region_test_iou': 0.3670902268463244}]
+[seed 20260525] china_interior: [{'seed': 20260525, 'in_region_test_iou': 0.4877786579155822}]
+[seed 20260525] south_asia_2: [{'seed': 20260525, 'in_region_test_iou': 0.15032835820895524}]
+[seed 20260525] southern_africa: [{'seed': 20260525, 'in_region_test_iou': 0.375631386157702}]
+[seed 20260525] mediterranean: [{'seed': 20260525, 'in_region_test_iou': 0.25686515603958077}]
+[seed 20260525] brazil_north: [{'seed': 20260525, 'in_region_test_iou': 0.6218293278841456}]
+[seed 20260525] japan_korea_2: [{'seed': 20260525, 'in_region_test_iou': 0.3800422604578746}]
+[seed 20260525] done in 2.2 min; receipt updated
+[seed 1] south_asia: [{'seed': 1, 'in_region_test_iou': 0.2935958888768007}]
+[seed 1] ssa: [{'seed': 1, 'in_region_test_iou': 0.2704189513672365}]
+[seed 1] east_asia: [{'seed': 1, 'in_region_test_iou': 0.7023059465807557}]
+[seed 1] andes: [{'seed': 1, 'in_region_test_iou': 0.2314126043122003}]
+[seed 1] mena: [{'seed': 1, 'in_region_test_iou': 0.22077807250221043}]
+[seed 1] sea: [{'seed': 1, 'in_region_test_iou': 0.5809946184724876}]
+[seed 1] eeca: [{'seed': 1, 'in_region_test_iou': 0.18860443221320974}]
+[seed 1] oceania: [{'seed': 1, 'in_region_test_iou': 0.4172615732536749}]
+[seed 1] weur: [{'seed': 1, 'in_region_test_iou': 0.63141261526473}]
+[seed 1] latam: [{'seed': 1, 'in_region_test_iou': 0.7370272274605361}]
+[seed 1] camcar: [{'seed': 1, 'in_region_test_iou': 0.3249548673795306}]
+[seed 1] canada: [{'seed': 1, 'in_region_test_iou': 0.6203950516027612}]
+[seed 1] nordic: [{'seed': 1, 'in_region_test_iou': 0.3359438924605494}]
+[seed 1] central_europe: [{'seed': 1, 'in_region_test_iou': 0.34959536509104283}]
+[seed 1] china_interior: [{'seed': 1, 'in_region_test_iou': 0.25640077641186804}]
+[seed 1] south_asia_2: [{'seed': 1, 'in_region_test_iou': 0.13376664828946985}]
+[seed 1] southern_africa: [{'seed': 1, 'in_region_test_iou': 0.07506865349119884}, {'seed': 1001, 'in_region_test_iou': 0.0}, {'seed': 2001, 'in_region_test_iou': 0.09555501146304005}]
+[seed 1] mediterranean: [{'seed': 1, 'in_region_test_iou': 0.0031645569620253164}, {'seed': 1001, 'in_region_test_iou': 0.22755856286544332}]
+[seed 1] brazil_north: [{'seed': 1, 'in_region_test_iou': 0.6426642664266426}]
+[seed 1] japan_korea_2: [{'seed': 1, 'in_region_test_iou': 0.6524051736666182}]
+[seed 1] done in 1.9 min; receipt updated
+[seed 2] south_asia: [{'seed': 2, 'in_region_test_iou': 0.22984878369493755}]
+[seed 2] ssa: [{'seed': 2, 'in_region_test_iou': 0.4276580587711487}]
+[seed 2] east_asia: [{'seed': 2, 'in_region_test_iou': 0.4531609704267753}]
+[seed 2] andes: [{'seed': 2, 'in_region_test_iou': 0.03426567854012272}, {'seed': 1002, 'in_region_test_iou': 0.032626095055152946}, {'seed': 2002, 'in_region_test_iou': 0.1737607614566066}]
+[seed 2] mena: [{'seed': 2, 'in_region_test_iou': 0.06778095078111876}, {'seed': 1002, 'in_region_test_iou': 0.5484369101952575}]
+[seed 2] sea: [{'seed': 2, 'in_region_test_iou': 0.5596836049856184}]
+[seed 2] eeca: [{'seed': 2, 'in_region_test_iou': 0.3517617515498705}]
+[seed 2] oceania: [{'seed': 2, 'in_region_test_iou': 0.42452844277841667}]
+[seed 2] weur: [{'seed': 2, 'in_region_test_iou': 0.5046678561055558}]
+[seed 2] latam: [{'seed': 2, 'in_region_test_iou': 0.3567914486336598}]
+[seed 2] camcar: [{'seed': 2, 'in_region_test_iou': 0.3479944472857456}]
+[seed 2] canada: [{'seed': 2, 'in_region_test_iou': 0.3292836506407882}]
+[seed 2] nordic: [{'seed': 2, 'in_region_test_iou': 0.22690138618036157}]
+[seed 2] central_europe: [{'seed': 2, 'in_region_test_iou': 0.328204628026627}]
+[seed 2] china_interior: [{'seed': 2, 'in_region_test_iou': 0.5520418712845696}]
+[seed 2] south_asia_2: [{'seed': 2, 'in_region_test_iou': 0.05974100996485823}, {'seed': 1002, 'in_region_test_iou': 0.06064024820194613}, {'seed': 2002, 'in_region_test_iou': 0.13145844463100054}]
+[seed 2] southern_africa: [{'seed': 2, 'in_region_test_iou': 0.10944013626787395}]
+[seed 2] mediterranean: [{'seed': 2, 'in_region_test_iou': 0.19607936568444326}]
+[seed 2] brazil_north: [{'seed': 2, 'in_region_test_iou': 0.5344351063229736}]
+[seed 2] japan_korea_2: [{'seed': 2, 'in_region_test_iou': 0.5746584378364444}]
+[seed 2] done in 2.0 min; receipt updated
+[seed 3] south_asia: [{'seed': 3, 'in_region_test_iou': 0.2645342217074742}]
+[seed 3] ssa: [{'seed': 3, 'in_region_test_iou': 0.46524501884760366}]
+[seed 3] east_asia: [{'seed': 3, 'in_region_test_iou': 0.6123379174852652}]
+[seed 3] andes: [{'seed': 3, 'in_region_test_iou': 0.09461039651323483}, {'seed': 1003, 'in_region_test_iou': 0.004307379378421226}, {'seed': 2003, 'in_region_test_iou': 0.20140287068909526}]
+[seed 3] mena: [{'seed': 3, 'in_region_test_iou': 0.006033755274261603}, {'seed': 1003, 'in_region_test_iou': 0.5174867988061529}]
+[seed 3] sea: [{'seed': 3, 'in_region_test_iou': 0.5303716180650595}]
+[seed 3] eeca: [{'seed': 3, 'in_region_test_iou': 0.27527405602923266}]
+[seed 3] oceania: [{'seed': 3, 'in_region_test_iou': 0.05123872127996031}, {'seed': 1003, 'in_region_test_iou': 0.3215279852800101}]
+[seed 3] weur: [{'seed': 3, 'in_region_test_iou': 0.2814113083693868}]
+[seed 3] latam: [{'seed': 3, 'in_region_test_iou': 0.7018465089440277}]
+[seed 3] camcar: [{'seed': 3, 'in_region_test_iou': 0.4692764767563789}]
+[seed 3] canada: [{'seed': 3, 'in_region_test_iou': 0.05186798194983734}, {'seed': 1003, 'in_region_test_iou': 0.6830525551207854}]
+[seed 3] nordic: [{'seed': 3, 'in_region_test_iou': 0.3436581638650523}]
+[seed 3] central_europe: [{'seed': 3, 'in_region_test_iou': 0.2198491475263861}]
+[seed 3] china_interior: [{'seed': 3, 'in_region_test_iou': 0.2673518275249208}]
+[seed 3] south_asia_2: [{'seed': 3, 'in_region_test_iou': 4.8916499535293254e-05}, {'seed': 1003, 'in_region_test_iou': 0.01379073419709462}, {'seed': 2003, 'in_region_test_iou': 0.10674372810270312}]
+[seed 3] southern_africa: [{'seed': 3, 'in_region_test_iou': 0.3291075255772575}]
+[seed 3] mediterranean: [{'seed': 3, 'in_region_test_iou': 0.2429861446198387}]
+[seed 3] brazil_north: [{'seed': 3, 'in_region_test_iou': 0.6940937896070976}]
+[seed 3] japan_korea_2: [{'seed': 3, 'in_region_test_iou': 0.7125328776085128}]
+[seed 3] done in 2.1 min; receipt updated
+[seed 4] south_asia: [{'seed': 4, 'in_region_test_iou': 0.3345258577527742}]
+[seed 4] ssa: [{'seed': 4, 'in_region_test_iou': 0.5003755572785423}]
+[seed 4] east_asia: [{'seed': 4, 'in_region_test_iou': 0.45592273892347124}]
+[seed 4] andes: [{'seed': 4, 'in_region_test_iou': 0.10634146341463414}]
+[seed 4] mena: [{'seed': 4, 'in_region_test_iou': 0.0888833664678595}, {'seed': 1004, 'in_region_test_iou': 0.4585169143454559}]
+[seed 4] sea: [{'seed': 4, 'in_region_test_iou': 0.5043425218578441}]
+[seed 4] eeca: [{'seed': 4, 'in_region_test_iou': 0.23122451663816915}]
+[seed 4] oceania: [{'seed': 4, 'in_region_test_iou': 0.3963109706331894}]
+[seed 4] weur: [{'seed': 4, 'in_region_test_iou': 0.6024672708962739}]
+[seed 4] latam: [{'seed': 4, 'in_region_test_iou': 0.5295513668933413}]
+[seed 4] camcar: [{'seed': 4, 'in_region_test_iou': 0.4364804745427583}]
+[seed 4] canada: [{'seed': 4, 'in_region_test_iou': 0.24740103180981515}]
+[seed 4] nordic: [{'seed': 4, 'in_region_test_iou': 0.30807690018451284}]
+[seed 4] central_europe: [{'seed': 4, 'in_region_test_iou': 0.1643571169173723}]
+[seed 4] china_interior: [{'seed': 4, 'in_region_test_iou': 0.4918591009242567}]
+[seed 4] south_asia_2: [{'seed': 4, 'in_region_test_iou': 0.01034432519061726}, {'seed': 1004, 'in_region_test_iou': 0.10954104746178923}]
+[seed 4] southern_africa: [{'seed': 4, 'in_region_test_iou': 0.34184743016012253}]
+[seed 4] mediterranean: [{'seed': 4, 'in_region_test_iou': 0.2579894846509825}]
+[seed 4] brazil_north: [{'seed': 4, 'in_region_test_iou': 0.1332391713747646}]
+[seed 4] japan_korea_2: [{'seed': 4, 'in_region_test_iou': 0.5794870229939425}]
+[seed 4] done in 1.9 min; receipt updated

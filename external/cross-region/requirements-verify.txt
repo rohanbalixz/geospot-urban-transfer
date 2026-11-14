@@ -1,3 +1,0 @@
-# Minimal dependencies for verify.py (the smoke test) and CI.
-numpy==2.2.6
-scipy==1.16.3
