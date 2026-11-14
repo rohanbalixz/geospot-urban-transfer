@@ -9,3 +9,5 @@ data/features/
 external/cross-region/data/
 external/cross-region/results/landsat_dump/
 data/models/
+logs/landsat_*.log
+logs/cities.txt

@@ -1,0 +1,34 @@
+{
+ "regimes_available": [
+  "R1",
+  "R2"
+ ],
+ "H2_holm": {
+  "R2": {
+   "p": 0.9118055555555555,
+   "p_holm": 0.9118055555555555,
+   "reject_at_0_05": false
+  }
+ },
+ "H2_family_complete": false,
+ "H1_learner_agreement_R1_R2": {
+  "within_target": {
+   "spearman": -0.3074504442925496,
+   "noise_corrected": -0.40646067724923135,
+   "rel_R1": 0.678543061386588,
+   "rel_R2": 0.8432100287224829
+  },
+  "relative_drop": {
+   "spearman": -0.3948051948051948,
+   "noise_corrected": -0.6194860798946968,
+   "rel_R1": 0.48329406283441595,
+   "rel_R2": 0.8404098866170123
+  },
+  "pair_specific": {
+   "spearman": 0.33827751196172257,
+   "noise_corrected": 0.41296329781400015,
+   "rel_R1": 0.7246778533472152,
+   "rel_R2": 0.9259304264878774
+  }
+ }
+}
