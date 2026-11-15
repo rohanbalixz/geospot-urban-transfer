@@ -25,7 +25,8 @@ Three changes, all decided before any distance is computed:
 Checkpoints are saved under results/landsat_dump/weights_seed{seed}/{region}.pt so
 model-aware distances can be computed later without retraining.
 
-UNTESTED: written without access to data/raw/landsat_history. Run --dry-run first.
+Used for this study's R3 run on 2026-11-14 (20 regions x 5 seeds, about 2 min per seed
+on an M3 Pro). Run --dry-run first to see the split and tile counts.
 """
 import argparse
 import glob

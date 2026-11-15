@@ -21,7 +21,7 @@ SURFACE, INK, INK2, MUTED, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#8a8984", "#
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"]   # reference palette slots 1-5, fixed order
 COMP = [("target", "Target region"), ("source", "Source region"), ("pair", "Pair-specific"),
         ("source_x_seed", "Training luck (source × seed)"), ("rest", "Other seed noise")]
-ROWS = [("primary", "GeoSpOT (feature + GeoCLIP)"), ("feature_only", "Feature only"),
+ROWS = [("primary", "GeoSpOT (band stats + GeoCLIP)"), ("feature_only", "Input-band stats only"),
         ("location_only_geoclip", "GeoCLIP only"), ("location_only_satclip_l40", "SatCLIP L40 only"),
         ("location_only_geodesic", "Geodesic only")]
 CRIT = {8: 0.29, 20: 0.15}   # pilot QAP critical |rho|, within-target (pre-registration)
@@ -39,7 +39,7 @@ def main():
     res = load()
     keys = list(res)
     fig = plt.figure(figsize=(3.3 * len(keys) + 1.2, 6.2))
-    gs = fig.add_gridspec(2, len(keys), height_ratios=[1, 2.3], hspace=0.55, wspace=0.12)
+    gs = fig.add_gridspec(2, len(keys), height_ratios=[1, 2.3], hspace=0.75, wspace=0.12)
 
     # --- top: variance components, one stacked bar per regime (2px surface gaps)
     axv = fig.add_subplot(gs[0, :])
@@ -84,13 +84,15 @@ def main():
         ax.set_yticks(range(len(ROWS)), [lab for _, lab in ROWS] if j == 0 else [""] * len(ROWS))
         ax.set_ylim(len(ROWS) - 0.4, -0.7); ax.set_xlim(-1, 1)
         ax.set_xlabel("Spearman ρ with within-target score")
-        sel = r["primary"]["tests"]["selection"]
-        ax.set_title(f"{k} ({S} regions): ceiling ±{jc:.2f}\nnearest-source gain {sel['distance_gain']:+.3f} vs oracle {sel['oracle_gain']:+.3f}",
+        e6 = json.load(open(RES / "exploratory_checks.json"))["E6_source_selection_rules"][k]
+        ax.set_title(f"{k} ({S} regions): ceiling ±{jc:.2f}\nchoosing a source: GeoSpOT-nearest {e6['nearest_geospot']['gain']:+.3f},\n"
+                     f"best overall source {e6['best_overall_source']['gain']:+.3f}, oracle {e6['oracle']['gain']:+.3f}",
                      loc="left", fontsize=8.5, color=INK)
         for s in ("top", "right"):
             ax.spines[s].set_visible(False)
-    fig.text(0.01, 0.005, "Shaded: beyond the joint ceiling (seed noise × symmetry). Dashed: QAP 5% critical |ρ|. "
-             "Bars: 95% region-bootstrap CI. Negative ρ = closer source transfers better.", fontsize=7, color=INK2)
+    fig.text(0.01, -0.035, "Shaded: beyond the joint ceiling (seed noise × symmetry). Dashed: QAP 5% critical |ρ|. Bars: 95% region-bootstrap CI.\n"
+             "Negative ρ = closer source transfers better. Source-choice gains: task units over a random foreign source, "
+             "cross-seed protocol; 'best overall source' is exploratory check E6.", fontsize=7, color=INK2, va="top")
     for ext in ("png", "pdf"):
         fig.savefig(RES / f"figure.{ext}", dpi=200, bbox_inches="tight")
     print("wrote", RES / "figure.png")

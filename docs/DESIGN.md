@@ -9,7 +9,8 @@ using only transfer outcomes and no region distances.
 GeoSpOT (Zhang, Betti, Klemmer, Rolf, Alvarez-Melis, 2026) scores a region distance by
 its Spearman correlation with the relative accuracy drop across region pairs. That number
 mixes two things: how good the distance is, and how much of the drop any distance could
-predict at all. On dense urban-change transfer, the second part is small, for three
+predict at all. On these dense built-up tasks (change nowcasting in R1/R2, 2015 extent
+mapping in R3), the second part is small, for three
 reasons. Each one sets a ceiling that can be computed from the transfer matrix alone.
 
 1. **Seed noise.** Retraining every source model with a new seed reshuffles which pairs
@@ -77,6 +78,16 @@ variant is reported alongside:
 - **One global cost scale** shared by all pairs, instead of each pair's own maximum, so
   distances are comparable across pairs.
 
-Features describe the model's own inputs: mean and SD of each input channel per tile, with
+Features describe the model's own inputs as input-band statistics (mean and SD of each
+input channel per tile), not the learned encoder features GeoSpOT uses, with
 one global standardisation. Each region contributes 200 tiles (or all, if fewer), and
 distance stability is checked over 5 tile resamples.
+
+## Added after an external review: choosing a source without a distance
+
+The plan scored GeoSpOT's nearest source against a cross-seed oracle (H4) but not against
+a rule that ignores distance. Exploratory check E6 adds one: pick the source with the best
+mean score on regions other than itself and the target. It uses no target labels and no
+distance. In R3 it recovers 91% of the oracle's gain, against 50% for GeoSpOT's nearest
+source. GeoSpOT's correlation survives controlling for source quality (E7), so it measures
+something real, but for choosing a model the source's quality dominates.

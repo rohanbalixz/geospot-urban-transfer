@@ -106,6 +106,26 @@ if r3f.exists() and exf.exists() and (ROOT / RECEIPTS["R3"][1]).exists():
         check(f"{name}: within-target rho and QAP p", np.isclose(rho, ref["spearman"]) and np.isclose(p, ref["qap_p"]),
               f"{len(idx)} regions, rho {rho:+.3f}, p {p:.4f}")
 
+    # E6-E8 (added after external review)
+    from scipy.stats import rankdata, spearmanr
+    dists = {"geospot": D3, "geodesic": np.array(r3["secondary"]["location_only_geodesic"]["distance"]),
+             "satclip_l40": np.array(r3["secondary"]["location_only_satclip_l40"]["distance"])}
+    rc = sel.rule_comparison(Y3, dists); ref6 = ex["E6_source_selection_rules"]["R3"]
+    check("E6 R3: source-selection rules (best overall, GeoSpOT, geodesic, SatCLIP)",
+          all(np.isclose(rc[k]["gain"], ref6[k]["gain"]) for k in ["best_overall_source", "nearest_geospot", "nearest_geodesic", "nearest_satclip_l40", "oracle"]),
+          f"best overall {rc['best_overall_source']['share_of_oracle']:.0%}, GeoSpOT {rc['nearest_geospot']['share_of_oracle']:.0%}, "
+          f"geodesic {rc['nearest_geodesic']['share_of_oracle']:.0%} of oracle")
+    Ym = Y3.mean(0); S3 = len(regs3); offm = ~np.eye(S3, dtype=bool); ii, jj = np.where(offm)
+    qv = np.array([Ym[s, offm[s]].mean() for s in range(S3)]); Q = np.repeat(qv[:, None], S3, 1); O3 = dec.within_target(Ym)
+    res = lambda y, x: rankdata(y) - np.polyval(np.polyfit(rankdata(x), rankdata(y), 1), rankdata(x))  # noqa: E731
+    part = np.corrcoef(res(D3[ii, jj], Q[ii, jj]), res(O3[ii, jj], Q[ii, jj]))[0, 1]
+    check("E7 R3: partial rho given source quality", np.isclose(part, ex["E7_geospot_vs_source_quality_R3"]["partial_rho_within_target_given_quality"]),
+          f"partial {part:+.3f}")
+    Yc = load_Y(*RECEIPTS["R1"]); Yu = load_Y(*RECEIPTS["R2"])
+    r8, p8, _, _ = inf.qap_spearman(dec.within_target(Yu.mean(0)), dec.within_target(Yc.mean(0)))
+    check("E8 CNN-U-Net agreement: exact permutation p", np.isclose(p8, ex["E8_learner_agreement_inference"]["exact_qap_p"]),
+          f"rho {r8:+.3f}, p {p8:.3f}")
+
 # 4. Holm
 cf = ROOT / "results/COMBINED.json"
 if cf.exists():

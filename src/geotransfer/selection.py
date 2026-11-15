@@ -82,3 +82,35 @@ def selection_bootstrap(Y, D, B=2000, rng=None):
         g.append(gd); f.append(gd / go if go > 0 else np.nan)
     return (float(np.percentile(g, 2.5)), float(np.percentile(g, 97.5)),
             float(np.nanpercentile(f, 2.5)), float(np.nanpercentile(f, 97.5)))
+
+
+def rule_comparison(Y, dists, keep=None, primary="geospot"):
+    """Compare rules for choosing a source model, under the same cross-seed protocol as
+    selection_summary (choose on n//2 seeds, score on the rest, all splits).
+
+    Rules: oracle (best source on the selection seeds); best_overall_source (highest mean
+    score on regions other than itself and the target, so no target label and no distance);
+    nearest_<name> for each distance in `dists`; rank_sum_quality_<primary>.
+    Returns {rule: {"gain": mean gain over a random foreign source, "share_of_oracle": ...}}."""
+    from scipy.stats import rankdata
+    if keep is not None:
+        Y = Y[:, keep][:, :, keep]
+        dists = {k: v[np.ix_(keep, keep)] for k, v in dists.items()}
+    K, S, _ = Y.shape
+    gains = {}
+    for A in itertools.combinations(range(K), max(1, K // 2)):
+        B = [k for k in range(K) if k not in A]
+        YA, YB = Y[list(A)].mean(0), Y[B].mean(0)
+        for t in range(S):
+            f = _foreign(S, t)
+            base = np.mean(YB[f, t])
+            q = {s: np.mean([YA[s, u] for u in range(S) if u not in (s, t)]) for s in f}
+            picks = {"oracle": max(f, key=lambda s: YA[s, t]), "best_overall_source": max(f, key=q.get)}
+            for name, Dm in dists.items():
+                picks[f"nearest_{name}"] = min(f, key=lambda s: Dm[s, t])
+            rq = rankdata([-q[s] for s in f]); rd = rankdata([dists[primary][s, t] for s in f])
+            picks[f"rank_sum_quality_{primary}"] = f[int(np.argmin(rq + rd))]
+            for name, s in picks.items():
+                gains.setdefault(name, []).append(YB[s, t] - base)
+    g = {k: float(np.mean(v)) for k, v in gains.items()}
+    return {k: dict(gain=v, share_of_oracle=(v / g["oracle"] if g["oracle"] > 0 else None)) for k, v in g.items()}

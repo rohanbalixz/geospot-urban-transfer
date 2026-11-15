@@ -106,5 +106,151 @@
    "convergence_warnings": 0,
    "max_relative_change_10x_iterations": 7.062441061881512e-10
   }
- }
+ },
+ "E6_source_selection_rules": {
+  "R1": {
+   "oracle": {
+    "gain": 0.003433931191725504,
+    "share_of_oracle": 1.0
+   },
+   "best_overall_source": {
+    "gain": -0.005894372778173069,
+    "share_of_oracle": -1.7165087036037046
+   },
+   "nearest_geospot": {
+    "gain": -0.0008609286993308037,
+    "share_of_oracle": -0.25071227443500366
+   },
+   "nearest_satclip_l40": {
+    "gain": -0.0015962700075167805,
+    "share_of_oracle": -0.46485206557522096
+   },
+   "nearest_geoclip": {
+    "gain": 0.0031945914024176627,
+    "share_of_oracle": 0.9303015185963653
+   },
+   "nearest_geodesic": {
+    "gain": -0.001482100589797111,
+    "share_of_oracle": -0.4316046266065033
+   },
+   "nearest_features": {
+    "gain": -0.0035063136856626222,
+    "share_of_oracle": -1.0210786092952395
+   },
+   "rank_sum_quality_geospot": {
+    "gain": -0.0003458570370666762,
+    "share_of_oracle": -0.10071752104412078
+   },
+   "geospot_and_geodesic_same_pick": 5
+  },
+  "R2": {
+   "oracle": {
+    "gain": 0.01965162480635876,
+    "share_of_oracle": 1.0
+   },
+   "best_overall_source": {
+    "gain": 0.02020089174449069,
+    "share_of_oracle": 1.0279502048071976
+   },
+   "nearest_geospot": {
+    "gain": -0.009629799326361491,
+    "share_of_oracle": -0.4900256045619971
+   },
+   "nearest_satclip_l40": {
+    "gain": -0.009826369828498435,
+    "share_of_oracle": -0.5000283653552593
+   },
+   "nearest_geoclip": {
+    "gain": -0.015471930303353226,
+    "share_of_oracle": -0.7873104873418358
+   },
+   "nearest_geodesic": {
+    "gain": -0.0027466092292437287,
+    "share_of_oracle": -0.13976499431003775
+   },
+   "nearest_features": {
+    "gain": 0.0011176752238656947,
+    "share_of_oracle": 0.05687444345589397
+   },
+   "rank_sum_quality_geospot": {
+    "gain": 0.0016670709313802677,
+    "share_of_oracle": 0.08483120087051765
+   },
+   "geospot_and_geodesic_same_pick": 5
+  },
+  "R3": {
+   "oracle": {
+    "gain": 0.14389956050244712,
+    "share_of_oracle": 1.0
+   },
+   "best_overall_source": {
+    "gain": 0.1315140418423639,
+    "share_of_oracle": 0.9139294198200654
+   },
+   "nearest_geospot": {
+    "gain": 0.07162489714104871,
+    "share_of_oracle": 0.49774229254738184
+   },
+   "nearest_satclip_l40": {
+    "gain": 0.10000696341795912,
+    "share_of_oracle": 0.6949775459269621
+   },
+   "nearest_geoclip": {
+    "gain": 0.05705850078772137,
+    "share_of_oracle": 0.3965161574399044
+   },
+   "nearest_geodesic": {
+    "gain": 0.07156523831061244,
+    "share_of_oracle": 0.49732770594108533
+   },
+   "nearest_features": {
+    "gain": 0.04360456487586644,
+    "share_of_oracle": 0.30302083427923265
+   },
+   "rank_sum_quality_geospot": {
+    "gain": 0.08597638538319707,
+    "share_of_oracle": 0.5974749685335904
+   },
+   "geospot_and_geodesic_same_pick": 15
+  },
+  "R3_without_near_duplicates": {
+   "oracle": {
+    "gain": 0.13929222581018724,
+    "share_of_oracle": 1.0
+   },
+   "best_overall_source": {
+    "gain": 0.12347455252978337,
+    "share_of_oracle": 0.8864425262185233
+   },
+   "nearest_geospot": {
+    "gain": 0.08059051932885214,
+    "share_of_oracle": 0.5785715524330295
+   },
+   "rank_sum_quality_geospot": {
+    "gain": 0.07842971290030414,
+    "share_of_oracle": 0.5630587955940907
+   }
+  }
+ },
+ "E7_geospot_vs_source_quality_R3": {
+  "rho_distance_vs_source_quality": -0.05238757978086334,
+  "partial_rho_within_target_given_quality": -0.30551353568378753,
+  "without_each_targets_nearest_source": {
+   "spearman": -0.23495328873504737,
+   "qap_p": 0.0022
+  }
+ },
+ "E8_learner_agreement_inference": {
+  "spearman": -0.30745044429254953,
+  "exact_qap_p": 0.18705357142857143,
+  "permutations": 40320,
+  "boot_ci95": [
+   -0.7815339317418152,
+   0.44249345121152583
+  ]
+ },
+ "E9_R2_share_of_ceiling_ci": [
+  -0.7847341126001377,
+  0.75493943793319
+ ]
 }

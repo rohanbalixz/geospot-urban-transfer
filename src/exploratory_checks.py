@@ -10,6 +10,13 @@ E3 outcome that removes source quality too: R3 pair-specific (double-centred) rh
    reported in results/R3.json; restated here next to E1/E2.
 E4 direction of H5 across regimes (none significant individually).
 E5 Sinkhorn convergence: re-solve sampled pairs with 10x the iteration budget.
+E6 source-selection rules (added after external review): best overall source (no target
+   labels, no distance), nearest by GeoSpOT, SatCLIP-L40, GeoCLIP, geodesic, features, and a
+   rank-sum of source quality and GeoSpOT, all under the H4 cross-seed protocol.
+E7 R3: GeoSpOT vs source quality, the partial correlation given source quality, and the test
+   without each target's nearest source.
+E8 CNN-U-Net agreement on the within-target score: exact permutation p and bootstrap CI.
+E9 R2 share-of-ceiling interval.
 
   python src/exploratory_checks.py   -> results/exploratory_checks.json
 """
@@ -85,4 +92,71 @@ for key in ["R2", "R3"]:
     conv[key] = dict(sampled_pairs=10, convergence_warnings=nwarn, max_relative_change_10x_iterations=max(rel))
     print(f"E5 {key}: warnings {nwarn}/10 pairs, max relative change at 10x iterations {max(rel):.1e}")
 out["E5_sinkhorn_convergence"] = conv
+
+# ---------------------------------------------------------------- E6-E9 (added after external review)
+import itertools  # noqa: E402
+
+from scipy.stats import rankdata, spearmanr  # noqa: E402
+
+
+def selection_rules(Y, dists, keep=None):
+    return sel.rule_comparison(Y, dists, keep=keep)
+
+
+E6 = {}
+for key in ["R1", "R2", "R3"]:
+    rr = json.load(open(ROOT / f"results/{key}.json")); Y, regs = ra.load_outcome_array(ra.REGIMES[key])
+    dists = {"geospot": np.array(rr["primary"]["distance"])}
+    for name, sname in [("satclip_l40", "location_only_satclip_l40"), ("geoclip", "location_only_geoclip"),
+                        ("geodesic", "location_only_geodesic"), ("features", "feature_only")]:
+        if isinstance(rr["secondary"].get(sname), dict):
+            dists[name] = np.array(rr["secondary"][sname]["distance"])
+    E6[key] = selection_rules(Y, dists)
+    S = len(regs); eye = np.eye(S, dtype=bool)
+    near = lambda Dm, t: int(np.argmin(np.where(eye[:, t], np.inf, Dm[:, t])))  # noqa: E731
+    E6[key]["geospot_and_geodesic_same_pick"] = int(sum(near(dists["geospot"], t) == near(dists["geodesic"], t) for t in range(S)))
+    print(f"E6 {key}: " + ", ".join(f"{k} {v['gain']:+.3f} ({v['share_of_oracle']:.0%})" for k, v in E6[key].items()
+                                    if isinstance(v, dict) and v["share_of_oracle"] is not None and k in
+                                    ("best_overall_source", "nearest_geospot", "nearest_satclip_l40", "nearest_geodesic", "rank_sum_quality_geospot", "oracle")))
+keep = [i for i, r in enumerate(regs3) if not r.endswith("_2")]
+E6["R3_without_near_duplicates"] = selection_rules(Y3, {"geospot": D3}, keep=keep)
+x = E6["R3_without_near_duplicates"]
+print(f"E6 R3 without *_2: best_overall {x['best_overall_source']['share_of_oracle']:.0%}, nearest_geospot {x['nearest_geospot']['share_of_oracle']:.0%}")
+out["E6_source_selection_rules"] = E6
+
+# E7: does GeoSpOT see something source quality does not?
+Ym = Y3.mean(0); S3 = len(regs3); offm = ~np.eye(S3, dtype=bool); ii, jj = np.where(offm)
+q = np.array([Ym[s, offm[s]].mean() for s in range(S3)]); Q = np.repeat(q[:, None], S3, 1)
+O3 = dec.within_target(Ym)
+
+
+def _resid(y, x):
+    ry, rx = rankdata(y), rankdata(x); return ry - np.polyval(np.polyfit(rx, ry, 1), rx)
+
+
+O_wo = O3.copy()
+for t in range(S3):
+    f = [s for s in range(S3) if s != t]; O_wo[min(f, key=lambda s: D3[s, t]), t] = np.nan
+rho_wo, p_wo, _, _ = inf.qap_spearman(D3, O_wo, n_perm=9999, rng=1)
+out["E7_geospot_vs_source_quality_R3"] = dict(
+    rho_distance_vs_source_quality=float(spearmanr(D3[ii, jj], Q[ii, jj]).correlation),
+    partial_rho_within_target_given_quality=float(np.corrcoef(_resid(D3[ii, jj], Q[ii, jj]), _resid(O3[ii, jj], Q[ii, jj]))[0, 1]),
+    without_each_targets_nearest_source=dict(spearman=rho_wo, qap_p=p_wo))
+e7 = out["E7_geospot_vs_source_quality_R3"]
+print(f"E7 R3: rho(distance, source quality) {e7['rho_distance_vs_source_quality']:+.3f}; partial {e7['partial_rho_within_target_given_quality']:+.3f}; "
+      f"without nearest source {rho_wo:+.3f} (p {p_wo:.4f})")
+
+# E8: is the CNN-U-Net agreement on the within-target score distinguishable from zero?
+Yc, _ = ra.load_outcome_array(ra.REGIMES["R1"]); Yu, _ = ra.load_outcome_array(ra.REGIMES["R2"])
+Oc, Ou = dec.within_target(Yc.mean(0)), dec.within_target(Yu.mean(0))
+rho8, p8, n8, _ = inf.qap_spearman(Ou, Oc)
+lo8, hi8, _ = inf.region_bootstrap(Ou, Oc, B=2000, rng=2)
+out["E8_learner_agreement_inference"] = dict(spearman=rho8, exact_qap_p=p8, permutations=n8, boot_ci95=[lo8, hi8])
+print(f"E8 CNN vs U-Net within-target: rho {rho8:+.3f}, exact p {p8:.3f}, CI {lo8:+.2f} to {hi8:+.2f}")
+
+# E9: uncertainty of 'share of ceiling' in R2
+r2 = json.load(open(ROOT / "results/R2.json")); w2 = r2["primary"]["tests"]["within_target"]
+jc2 = r2["ceilings"]["within_target"]["joint_ceiling"]
+out["E9_R2_share_of_ceiling_ci"] = [w2["boot_ci95"][0] / jc2, w2["boot_ci95"][1] / jc2]
+print(f"E9 R2 share of ceiling, 95% CI {out['E9_R2_share_of_ceiling_ci'][0]:+.0%} to {out['E9_R2_share_of_ceiling_ci'][1]:+.0%}")
 json.dump(out, open(ROOT / "results/exploratory_checks.json", "w"), indent=1)

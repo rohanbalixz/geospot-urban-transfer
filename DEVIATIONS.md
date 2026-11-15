@@ -73,3 +73,24 @@ deviations from the analysis, so the run can be audited.
      significant in none.
    - **E5, Sinkhorn convergence:** no warnings, and values change by at most 5e-9 with 10x
      the iteration budget.
+4. **Checks added after an external review (2026-11-14, about 21:00; not pre-registered).**
+   A reviewer reran the public repo and asked for a baseline the plan left out. Every number
+   below was recomputed here before being added, and is re-derived by `verify.py`.
+   - **E6, rules for choosing a source** (same cross-seed protocol as H4). In R3: the best
+     overall source (best mean score on the other regions; no target labels, no distance)
+     gets +0.132 IoU (91% of the oracle's gain); nearest by SatCLIP-L40 +0.100 (69%);
+     rank-sum of source quality and GeoSpOT +0.086 (60%); nearest by GeoSpOT +0.072 (50%);
+     nearest by geodesic distance +0.072 (50%). GeoSpOT and geodesic distance pick the same
+     source for 15 of 20 targets. Without the near-duplicate regions, best overall 89% and
+     GeoSpOT 58%. In R2, best overall +0.020 (103%) against GeoSpOT −0.010.
+   - **E7, R3.** GeoSpOT distance vs source quality ρ = −0.05. The partial correlation with
+     the within-target score, given source quality, is −0.31. Without each target's
+     GeoSpOT-nearest source, ρ = −0.24, QAP p = 0.002.
+   - **E8.** CNN-U-Net agreement on the within-target score: ρ = −0.31, exact permutation
+     p = 0.19, 95% CI −0.78 to +0.44. The README no longer says the learners "disagree".
+   - **E9.** R2's share of the ceiling has a 95% CI of −78% to +75%, so the README calls it
+     uninformative rather than "3%".
+   - **Wording.** "Features" are now called input-band statistics (not GeoSpOT's learned
+     encoder features). R3's task is named as 2015 built-up extent mapping. The README adds a
+     caveat that the freeze is recorded only by git commit time.
+
