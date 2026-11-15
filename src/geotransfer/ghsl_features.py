@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -37,7 +38,8 @@ from rasterio.warp import Resampling, reproject, transform_bounds
 from rasterio.windows import from_bounds as window_from_bounds
 
 ROOT = Path(__file__).resolve().parents[2]
-GHSL = Path("/Users/rohanbali/Desktop/NeuralTimeCapsule/data")
+# Folder holding the global GHSL R2023A GeoTIFFs (BUILT_S, BUILT_V, POP, 1975-2015).
+GHSL = Path(os.environ.get("GHSL_DIR", "data/raw/ghsl")).expanduser()
 TRAIN_EPOCHS = [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010]
 TARGET_EPOCH = 2015
 TILE_PX, TILE_STRIDE, RES = 128, 64, 250

@@ -103,3 +103,25 @@ def test_symmetric_ceiling():
     anti = (G - G.T) / 2; np.fill_diagonal(anti, np.nan)
     share, r = dec.symmetric_ceiling(anti)
     assert share < 0.01
+
+
+def test_coverage_is_directional():
+    from geotransfer import coverage as cov
+    rng = np.random.default_rng(0)
+    broad = rng.normal(0, 3, (400, 3))      # wide support
+    narrow = rng.normal(0, 0.5, (400, 3))   # sits inside the broad one
+    assert cov.coverage(broad, narrow) > 0.9          # broad source covers the narrow target
+    assert cov.coverage(narrow, broad) < 0.5          # not the reverse
+    C = cov.coverage_matrix([broad, narrow])
+    assert np.isnan(C[0, 0]) and C[0, 1] > C[1, 0]
+    assert cov.antisym_upper(C)[0] > 0
+
+
+def test_paired_bootstrap_difference_detects_better_distance():
+    rng = np.random.default_rng(3)
+    S = 12
+    P = rng.normal(size=(S, 2)); D_true = np.sqrt(((P[:, None] - P[None]) ** 2).sum(-1))
+    O = -D_true + 0.05 * rng.normal(size=(S, S)); np.fill_diagonal(O, np.nan)
+    D_noise = rng.random((S, S)); D_noise = (D_noise + D_noise.T) / 2
+    d, lo, hi, p = inf.paired_region_bootstrap_diff(D_true, D_noise, O, B=300, rng=1)
+    assert d > 0.5 and lo > 0 and p < 0.05

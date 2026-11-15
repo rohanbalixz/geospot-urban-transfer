@@ -1,0 +1,110 @@
+{
+ "note": "exploratory, not pre-registered; reuses committed distances",
+ "E1_R3_same_8_regions_as_R2": {
+  "regions": [
+   "south_asia",
+   "ssa",
+   "east_asia",
+   "andes",
+   "mena",
+   "sea",
+   "eeca",
+   "oceania"
+  ],
+  "within_target": {
+   "spearman": -0.09355126559117852,
+   "qap_p": 0.6358382936507937,
+   "exact": true,
+   "boot_ci95": [
+    -0.49190272305943256,
+    0.303827625940877
+   ]
+  },
+  "pair_specific": {
+   "spearman": -0.015318335886274835,
+   "qap_p": 0.8958581349206349,
+   "exact": true,
+   "boot_ci95": [
+    -0.44946892735030936,
+    0.37972909993524856
+   ]
+  },
+  "selection": {
+   "distance_gain": 0.024500235893736122,
+   "oracle_gain": 0.10713266495013103,
+   "captured_fraction": 0.22869062302464602
+  }
+ },
+ "E2_R3_without_near_duplicates": {
+  "regions": [
+   "south_asia",
+   "ssa",
+   "east_asia",
+   "andes",
+   "mena",
+   "sea",
+   "eeca",
+   "oceania",
+   "weur",
+   "latam",
+   "camcar",
+   "canada",
+   "nordic",
+   "central_europe",
+   "china_interior",
+   "southern_africa",
+   "mediterranean",
+   "brazil_north"
+  ],
+  "within_target": {
+   "spearman": -0.3035347350199457,
+   "qap_p": 0.0002,
+   "exact": false,
+   "boot_ci95": [
+    -0.4936696286003342,
+    -0.1110570907853372
+   ]
+  },
+  "pair_specific": {
+   "spearman": -0.2882016942311892,
+   "qap_p": 0.0001,
+   "exact": false,
+   "boot_ci95": [
+    -0.4788114591891777,
+    -0.08252586153384264
+   ]
+  },
+  "selection": {
+   "distance_gain": 0.08059051932885215,
+   "oracle_gain": 0.13929222581018721,
+   "captured_fraction": 0.5785715524330297
+  }
+ },
+ "E3_R3_pair_specific_full": -0.2801805323723438,
+ "E4_H5_by_regime": {
+  "R1": {
+   "spearman": 0.5873015873015873,
+   "qap_p": 0.10523313492063492
+  },
+  "R2": {
+   "spearman": 0.3661740558292282,
+   "qap_p": 0.3244047619047619
+  },
+  "R3": {
+   "spearman": 0.19947162846033062,
+   "qap_p": 0.3284328432843284
+  }
+ },
+ "E5_sinkhorn_convergence": {
+  "R2": {
+   "sampled_pairs": 10,
+   "convergence_warnings": 0,
+   "max_relative_change_10x_iterations": 4.5758434349451016e-09
+  },
+  "R3": {
+   "sampled_pairs": 10,
+   "convergence_warnings": 0,
+   "max_relative_change_10x_iterations": 7.062441061881512e-10
+  }
+ }
+}

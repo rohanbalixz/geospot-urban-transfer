@@ -16,7 +16,7 @@ written; no model is run.
 
 Usage (from the project root):
   python -m geotransfer.build_processed --out external/cross-region/data/processed
-  python -m geotransfer.build_processed --check-against ~/Desktop/Confident-but-Unidentifiable_TGIS/repo/data/processed
+  python -m geotransfer.build_processed --check-against <folder with original eval_metrics.json files>
 """
 from __future__ import annotations
 

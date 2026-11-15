@@ -1,5 +1,9 @@
 # Reproduce the study. `make verify` needs nothing but the repo; the rest needs data.
+PYTHON  ?= python3.12
 PY      := ./.venv/bin/python
+GHSL_DIR ?= data/raw/ghsl
+ORIG_PROCESSED ?=
+export GHSL_DIR
 PYSRC   := PYTHONPATH=src $(PY) -W ignore
 XR      := external/cross-region
 XR_COMMIT := 649e9ad
@@ -10,7 +14,7 @@ R8      := south_asia ssa east_asia andes mena sea eeca oceania
 .PHONY: env test verify pilot external processed landsat r3-matrix features embeddings analysis figure all
 
 env:                ## Python 3.11+ virtual environment
-	python3 -m venv .venv && $(PY) -m pip install -r requirements.txt
+	$(PYTHON) -m venv .venv && $(PY) -m pip install -r requirements.txt
 
 test:               ## method checks on synthetic inputs (no data)
 	$(PY) -m pytest -q tests/
@@ -28,10 +32,10 @@ external:           ## cross-region training code at the pinned commit, plus the
 	git -C $(XR) checkout -q $(XR_COMMIT)
 	cp rerun/landsat_matrix_dump.py $(XR)/scripts/eval/landsat_matrix_dump.py
 
-processed:          ## per-city GHSL rasters from the global GHSL R2023A files (GHSL_DIR in ghsl_features.py)
+processed:          ## per-city GHSL rasters from the global GHSL R2023A files in $(GHSL_DIR)
 	$(PYSRC) -m geotransfer.build_processed --out $(XR)/data/processed
-	$(PYSRC) -m geotransfer.build_processed --out $(XR)/data/processed \
-	    --check-against ~/Desktop/Confident-but-Unidentifiable_TGIS/repo/data/processed
+	test -z "$(ORIG_PROCESSED)" || $(PYSRC) -m geotransfer.build_processed --out $(XR)/data/processed \
+	    --check-against $(ORIG_PROCESSED)
 
 landsat:            ## raw Landsat history, 220 cities, Microsoft Planetary Computer (no credentials)
 	cd $(XR) && cut -d' ' -f1 ../../data/cities.txt | $(GDAL_NET) xargs -P 4 -I{} \
@@ -42,7 +46,7 @@ r3-matrix:          ## train 20 regions x 5 seeds on raw Landsat, city-disjoint 
 	cp $(XR)/results/metrics/landsat_matrix_dump_multiseed.json data/receipts/
 	mkdir -p data/features/landsat && cp $(XR)/results/landsat_dump/features/*.npz data/features/landsat/
 
-features:           ## GHSL tile features for the 8 harmonised regions
+features:           ## GHSL tile features for the 8 harmonised regions (needs GHSL_DIR)
 	$(PYSRC) -m geotransfer.ghsl_features --regions $(R8) --out data/features/ghsl
 
 embeddings:         ## GeoCLIP and SatCLIP-ResNet50 L40/L10 at tile centres

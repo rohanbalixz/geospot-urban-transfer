@@ -90,6 +90,22 @@ for key, (kind, rpath) in RECEIPTS.items():
           np.isclose(s["oracle_gain"], s0["oracle_gain"]),
           f"nearest {s['distance_gain']:+.4f} vs oracle {s['oracle_gain']:+.4f}")
 
+# 3b. R3 sensitivity and exploratory robustness numbers quoted in the README
+r3f, exf = ROOT / "results/R3.json", ROOT / "results/exploratory_checks.json"
+if r3f.exists() and exf.exists() and (ROOT / RECEIPTS["R3"][1]).exists():
+    r3 = json.load(open(r3f)); ex = json.load(open(exf)); sens = json.load(open(ROOT / "results/R3_sensitivity.json"))
+    Y3 = load_Y(*RECEIPTS["R3"]); D3 = np.array(r3["primary"]["distance"]); regs3 = r3["regions"]
+    for name, regions in [("E1 R3 on the 8 R1/R2 regions", ex["E1_R3_same_8_regions_as_R2"]["regions"]),
+                          ("E2 R3 without *_2 regions", ex["E2_R3_without_near_duplicates"]["regions"]),
+                          ("R3 without collapsed region", [r for r in regs3 if r not in sens["without_collapsed"]["dropped"]])]:
+        idx = [regs3.index(r) for r in regions]
+        Y, D = Y3[:, idx][:, :, idx], D3[np.ix_(idx, idx)]
+        rho, p, _, _ = inf.qap_spearman(D, dec.within_target(Y.mean(0)), n_perm=None if len(idx) <= 8 else 9999, rng=1)
+        ref = (ex["E1_R3_same_8_regions_as_R2"] if name.startswith("E1") else ex["E2_R3_without_near_duplicates"])["within_target"] \
+            if name.startswith("E") else dict(spearman=sens["without_collapsed"]["within_target_spearman"], qap_p=sens["without_collapsed"]["qap_p"])
+        check(f"{name}: within-target rho and QAP p", np.isclose(rho, ref["spearman"]) and np.isclose(p, ref["qap_p"]),
+              f"{len(idx)} regions, rho {rho:+.3f}, p {p:.4f}")
+
 # 4. Holm
 cf = ROOT / "results/COMBINED.json"
 if cf.exists():

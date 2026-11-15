@@ -35,6 +35,15 @@ deviations from the analysis, so the run can be audited.
    to time the pipeline (about 6 s per model). Its receipt and weights were deleted. No
    distance was involved.
 
+6. **Author email on GitHub's LICENSE commit (2026-11-14, 18:15).** The LICENSE commit
+   GitHub creates through its web UI was re-authored with the noreply address and
+   force-pushed. File contents are unchanged. Hashes after `6aa612f` changed; the
+   pre-registration (`075e436`) and R1/R2 (`6aa612f`) commits did not.
+7. **Portability refactor after the results (2026-11-14).** Machine-specific paths were
+   replaced with settings (`GHSL_DIR`, `ORIG_PROCESSED`, `PYTHON` in the Makefile). Rebuilt
+   features are byte-identical to the committed ones (checked on andes), and a fresh clone
+   from GitHub reruns R1 with 0 of 1,302 values changed.
+
 ## Deviations from the pre-registered analysis
 
 1. **How the with/without collapse check is defined (a clarification, not a change).** The
@@ -48,3 +57,15 @@ deviations from the analysis, so the run can be audited.
    models.** Reported because it changes how the published raw-Landsat retention should be
    read: in-region 0.384 vs 0.461, home-field gap +0.112 vs +0.187, retention 0.71 vs 0.59.
    The out-of-region score is unchanged (0.272 vs 0.274).
+3. **Exploratory robustness checks (not pre-registered; added after all pre-registered
+   results were committed).** `src/exploratory_checks.py`, `results/exploratory_checks.json`,
+   re-derived in `verify.py`:
+   - **E1, R3 on the same 8 regions as R1/R2:** within-target ρ = −0.09, exact QAP p = 0.64.
+     The R3 effect needs all 20 regions, so the study does not show that the input regime,
+     rather than the number of regions, separates R3 from R2.
+   - **E2, R3 without the near-duplicate regions** (south_asia_2, japan_korea_2): ρ = −0.30,
+     p = 0.0002.
+   - **E4, H5 by regime:** positive in all three regimes (+0.59, +0.37, +0.20) and
+     significant in none.
+   - **E5, Sinkhorn convergence:** no warnings, and values change by at most 5e-9 with 10x
+     the iteration budget.

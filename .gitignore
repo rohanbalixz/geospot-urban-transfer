@@ -2,10 +2,10 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-results_synthetic/
 
 # rebuilt third-party data and model weights
 data/models/
 logs/landsat_*.log
 logs/cities.txt
 external/cross-region/
+data/raw/
