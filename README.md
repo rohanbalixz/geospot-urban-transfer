@@ -1,6 +1,6 @@
 # geospot-urban-transfer
 
-[![ci](https://github.com/rohanbalixz/geospot-urban-transfer/actions/workflows/ci.yml/badge.svg)](https://github.com/rohanbalixz/geospot-urban-transfer/actions/workflows/ci.yml)
+[![ci](https://github.com/rohanbalixz/geospot-urban-transfer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rohanbalixz/geospot-urban-transfer/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **How much of cross-region transfer can a distance between regions predict, and how much
