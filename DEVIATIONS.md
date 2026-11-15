@@ -1,4 +1,4 @@
-# Deviations and run log (after pre-registration commit `075e436`, 2026-11-14 16:42)
+# Deviations and run log (after pre-registration commit `54220f8`, 2026-11-14 16:42)
 
 Everything that happened after the plan was frozen, including things that are not
 deviations from the analysis, so the run can be audited.
@@ -37,8 +37,12 @@ deviations from the analysis, so the run can be audited.
 
 6. **Author email on GitHub's LICENSE commit (2026-11-14, 18:15).** The LICENSE commit
    GitHub creates through its web UI was re-authored with the noreply address and
-   force-pushed. File contents are unchanged. Hashes after `6aa612f` changed; the
-   pre-registration (`075e436`) and R1/R2 (`6aa612f`) commits did not.
+   force-pushed. File contents are unchanged.
+8. **README cleanup in the first three commits (2026-11-14, 20:40).** The early README
+   listed the two personal planning documents removed in item 4. Those lines were removed
+   from the README in every commit (dates kept; `PREREGISTRATION.md` byte-identical), and
+   the history was force-pushed. Hash map: pre-registration `fe7438e` → `075e436` →
+   **`54220f8`**; R1/R2 results `cc1fad6` → `6aa612f` → **`263e071`**.
 7. **Portability refactor after the results (2026-11-14).** Machine-specific paths were
    replaced with settings (`GHSL_DIR`, `ORIG_PROCESSED`, `PYTHON` in the Makefile). Rebuilt
    features are byte-identical to the committed ones (checked on andes), and a fresh clone

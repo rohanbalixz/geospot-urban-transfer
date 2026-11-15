@@ -14,7 +14,7 @@ tasks as open. This repo tests it on a dense prediction task. First it measures 
 the transfer structure any distance could predict, then where GeoSpOT falls inside that
 limit.
 
-The plan and analysis code were committed (`075e436`, 2026-11-14 16:42 EST) before any
+The plan and analysis code were committed (`54220f8`, 2026-11-14 16:42 EST) before any
 distance between regions was computed. Everything after that, including the checks that
 weaken one reading of the results, is in [`DEVIATIONS.md`](DEVIATIONS.md).
 
@@ -136,7 +136,7 @@ reruns R1 bit for bit.
 ## Layout
 
 ```
-PREREGISTRATION.md   the frozen plan (commit 075e436)
+PREREGISTRATION.md   the frozen plan (commit 54220f8)
 DEVIATIONS.md        everything after the freeze: operational events, clarifications, added checks
 docs/DESIGN.md       why the ceilings, the outcomes and the inference are what they are
 src/geotransfer/     decomposition, inference (QAP, bootstrap), selection, OT distances,
